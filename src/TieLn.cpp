@@ -4,13 +4,13 @@
 
 #include "TieLn.hpp"
 
-unsigned int serialNumberCounter = 0;
+unsigned int TieLn::serialNumberCounter = 0;
 
 unsigned int TieLn::getNextSerialNumber() {
     return ++serialNumberCounter;
 }
 
-float TieLn::getModelWeight() const {
+double TieLn::getModelWeight() const {
     return 6;
 }
 
@@ -22,5 +22,5 @@ std::string TieLn::getModel() const {
     return "TIE/LN";
 }
 
-TieLn::TieLn() : Ship() {}
+TieLn::TieLn() : Ship(getNextSerialNumber()) {}
 

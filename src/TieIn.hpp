@@ -14,7 +14,7 @@ public:
     TieIn();
     std::string getModel() const override;
     unsigned int getModelSpeedMax() const override;
-    float getModelWeight() const override;
+    double getModelWeight() const override;
 };
 
 

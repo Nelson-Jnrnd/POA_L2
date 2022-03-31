@@ -12,7 +12,7 @@ class Ship {
     /// current speed of this spaceship in MGLT
     unsigned speed;
     /// distance travelled by this ship in mio. Km
-    float distance;
+    double distance;
     /// nickname given to this spaceship, can be null
     std::string nickname;
     /// serial number of this ship
@@ -21,7 +21,7 @@ class Ship {
 protected:
 /// Constructor
 /// @serialNumber serial number of this ship
-Ship();    
+Ship(unsigned int serialNumber);
 
 public:
     /// Give a new nickname to this ship
@@ -32,7 +32,7 @@ public:
     std::string getNickname() const;
     /// Get the current consumption of the ship in tons
     /// \return the consumption of the ship in tons
-    float getConsumption() const;
+    double getConsumption() const;
     /// Get the model of the ship
     /// \return the model of the ship
     virtual std::string getModel() const = 0;
@@ -41,11 +41,10 @@ public:
     virtual unsigned int getModelSpeedMax() const = 0;
     /// Get the weight of the ship model
     /// \return the weight of the ship model
-    virtual float getModelWeight() const = 0;
+    virtual double getModelWeight() const = 0;
     /// Get the serial number of the next ship to be built
     /// \return the serial number of the next ship to be built
     virtual unsigned int getNextSerialNumber() = 0;
-
 };
 
 

@@ -1,6 +1,13 @@
 #include <iostream>
+#include "TieLn.hpp"
+#include "Shuttle.hpp"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    TieLn blackLeader;
+    blackLeader.setNickname("Black leader");
+    TieLn blackTwo;
+    Shuttle shuttle(23.4);
+
+    std::cout << "stop";
     return 0;
 }

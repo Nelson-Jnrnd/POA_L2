@@ -4,13 +4,13 @@
 
 #include "TieIn.hpp"
 
-unsigned int serialNumberCounter = 0;
+unsigned int TieIn::serialNumberCounter = 0;
 
 unsigned int TieIn::getNextSerialNumber() {
     return ++serialNumberCounter;
 }
 
-float TieIn::getModelWeight() const {
+double TieIn::getModelWeight() const {
     return 5;
 }
 
@@ -22,4 +22,4 @@ std::string TieIn::getModel() const {
     return "TIE/IN";
 }
 
-TieIn::TieIn() : Ship() {}
+TieIn::TieIn() : Ship(getNextSerialNumber()) {}

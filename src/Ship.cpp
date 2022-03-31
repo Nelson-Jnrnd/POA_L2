@@ -5,7 +5,7 @@
 #include "Ship.h"
 #include <cmath>
 
-Ship::Ship() : speed(0), distance(0), nickname(""), serialNumber(getNextSerialNumber()) {}
+Ship::Ship(unsigned int serialNumber) : speed(0), distance(0), nickname(""), serialNumber(serialNumber) {}
 
 void Ship::setNickname(const std::string &newNickname) {
     if (newNickname.empty()) {
@@ -15,6 +15,6 @@ void Ship::setNickname(const std::string &newNickname) {
     }
 }
 
-float Ship::getConsumption() const {
+double Ship::getConsumption() const {
     return std::cbrt(getModelWeight()) / 2 * log10(getModelWeight() * speed) * log10(distance + 1);   
 }
