@@ -54,7 +54,7 @@ public:
 
     std::ostream& toStream(std::ostream &out) const;
     Squadron& operator+=(const Ship& ship);
-    Squadron& operator-=(const Ship* ship);
+    Squadron& operator-=(const Ship& ship);
 };
 
 

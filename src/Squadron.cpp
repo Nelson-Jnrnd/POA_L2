@@ -62,6 +62,31 @@ void Squadron::addShip(const Ship *ship) {
     }
 }
 
+void Squadron::removeShip(const Ship *ship) {
+    if(ship == nullptr) {
+        throw std::invalid_argument("Ship cannot be nullptr");
+    }
+    if(isEmpty()) {
+        throw std::invalid_argument("Squadron is empty");
+    }
+    Member *currentMember = firstMember;
+    Member *previousMember = nullptr;
+    while (currentMember != nullptr) {
+        if (currentMember->getShip() == ship) {
+            if (previousMember == nullptr) {
+                firstMember = currentMember->getNext();
+            } else {
+                previousMember->setNext(currentMember->getNext());
+            }
+            delete currentMember;
+            return;
+        }
+        previousMember = currentMember;
+        currentMember = currentMember->getNext();
+    }
+    throw std::invalid_argument("Ship is not in the squadron");
+}
+
 /// Member
 
 Squadron::Member::Member(const Ship *ship) : ship(ship), next(nullptr) {}
@@ -106,8 +131,8 @@ Squadron& Squadron::operator+= (const Ship& ship) {
     return *this;
 }
 
-Squadron& Squadron::operator-= (const Ship *ship) {
-    //removeShip(ship);
+Squadron& Squadron::operator-= (const Ship &ship) {
+    removeShip(&ship);
     return *this;
 }
 

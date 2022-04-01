@@ -18,5 +18,9 @@ int main() {
     squad.setLeader(&blackLeader);
 
     std::cout << squad;
+
+    squad -= shuttle;
+
+    std::cout << squad;
     return 0;
 }
