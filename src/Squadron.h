@@ -10,11 +10,11 @@
 
 class Squadron {
     class Member {
-        Ship* ship;
+        const Ship* ship;
         Member* next;
     public:
-        Member(Ship* ship);
-        Ship* getShip();
+        Member(const Ship* ship);
+        const Ship* getShip();
         Member* getNext();
         void setNext(Member* next);
         bool hasNext();
@@ -29,7 +29,7 @@ class Squadron {
     /// Name of the squadron
     std::string name;
 
-    Member* getMember(Ship* ship);
+    Member* getMember(const Ship* ship);
     bool isEmpty() const;
 public:
     Squadron(const std::string &name);
@@ -43,16 +43,18 @@ public:
     /// @return output stream
     friend std::ostream& operator<<(std::ostream& out, const Squadron& squadron);
 
-    void addShip(Ship* ship);
-    void removeShip(Ship* ship);
-    bool containsShip(Ship* ship);
+    void addShip(const Ship* ship);
+    void removeShip(const Ship* ship);
+    bool containsShip(const Ship* ship);
     /// Set leader of the squadron
-    void setLeader(Ship* ship);
+    void setLeader(const Ship* ship);
     /// Remove leader of the squadron
     /// Get leader of the squadron
     Ship* getLeader() const;
 
     std::ostream& toStream(std::ostream &out) const;
+    Squadron& operator+=(const Ship& ship);
+    Squadron& operator-=(const Ship* ship);
 };
 
 

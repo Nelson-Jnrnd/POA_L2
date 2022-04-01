@@ -11,9 +11,9 @@ int main() {
     Shuttle shuttle(23.4);
 
     Squadron squad("Black Squadron");
-    squad.addShip(&blackLeader);
-    squad.addShip(&blackTwo);
-    squad.addShip(&shuttle);
+    squad += blackLeader;
+    squad += blackTwo;
+    squad += shuttle;
 
     squad.setLeader(&blackLeader);
 

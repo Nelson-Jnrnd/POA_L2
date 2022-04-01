@@ -17,7 +17,7 @@ Squadron::~Squadron() {
     }
 }
 
-void Squadron::setLeader(Ship *ship) {
+void Squadron::setLeader(const Ship *ship) {
     if (ship == nullptr) {
         throw std::invalid_argument("Ship cannot be nullptr");
     }
@@ -32,7 +32,7 @@ bool Squadron::isEmpty() const {
     return firstMember == nullptr;
 }
 
-Squadron::Member* Squadron::getMember(Ship *ship) {
+Squadron::Member* Squadron::getMember(const Ship *ship) {
     if(ship == nullptr) {
         throw std::invalid_argument("Ship cannot be nullptr");
     }
@@ -49,7 +49,7 @@ Squadron::Member* Squadron::getMember(Ship *ship) {
     return nullptr;
 }
 
-void Squadron::addShip(Ship *ship) {
+void Squadron::addShip(const Ship *ship) {
     if(ship == nullptr) {
         throw std::invalid_argument("Ship cannot be nullptr");
     }
@@ -64,13 +64,13 @@ void Squadron::addShip(Ship *ship) {
 
 /// Member
 
-Squadron::Member::Member(Ship *ship) : ship(ship), next(nullptr) {}
+Squadron::Member::Member(const Ship *ship) : ship(ship), next(nullptr) {}
 
 Squadron::Member* Squadron::Member::getNext() {
     return next;
 }
 
-Ship* Squadron::Member::getShip() {
+const Ship* Squadron::Member::getShip() {
     return ship;
 }
 
@@ -100,6 +100,17 @@ std::ostream& Squadron::toStream(std::ostream &out) const {
     }
     return out;
 }
+
+Squadron& Squadron::operator+= (const Ship& ship) {
+    addShip(&ship);
+    return *this;
+}
+
+Squadron& Squadron::operator-= (const Ship *ship) {
+    //removeShip(ship);
+    return *this;
+}
+
 /// Friend
 
 std::ostream& operator<<(std::ostream& out, const Squadron& squadron) {
