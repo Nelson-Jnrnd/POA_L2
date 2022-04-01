@@ -10,9 +10,8 @@ double CargoShip::getCurrentCapacity() const {
     return currentCapacity;
 }
 
-std::string CargoShip::toString() const {
-    std::string info = Ship::toString();
-    info += "cargo : " + std::to_string(currentCapacity) + " tons (max : "
-     + std::to_string(getMaxCapacity()) + ")\n";
-    return info;
+void CargoShip::write(std::ostream &out) const {
+    Ship::write(out);
+    out << "cargo : " << std::to_string(currentCapacity) << " tons (max : "
+     << std::to_string(getMaxCapacity()) << ")\n";
 }

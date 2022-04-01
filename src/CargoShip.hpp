@@ -19,7 +19,7 @@ class CargoShip : public Ship {
     /// Get the current capacity of the ship in tons
     /// \return the current capacity of the ship in tons
     double getCurrentCapacity() const;
-    std::string toString() const;
+    void write(std::ostream &out) const;
 };
 
 

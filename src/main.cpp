@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "TieLn.hpp"
 #include "Shuttle.hpp"
 #include "Squadron.h"
@@ -16,6 +17,6 @@ int main() {
 
     squad.setLeader(&blackLeader);
 
-    std::cout << squad.toString();
+    std::cout << std::setprecision(2) << squad;
     return 0;
 }

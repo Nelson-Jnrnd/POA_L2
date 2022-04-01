@@ -22,8 +22,10 @@ protected:
 /// Constructor
 /// @serialNumber serial number of this ship
 Ship(unsigned int serialNumber);
-
+void write(std::ostream& out) const;
 public:
+    friend std::ostream& operator<<(std::ostream& out, const Ship& ship);
+
     /// Give a new nickname to this ship
     /// \param newNickname nickname given to this ship
     void setNickname(const std::string &newNickname);
@@ -33,9 +35,6 @@ public:
     /// Get the current consumption of the ship in tons
     /// \return the consumption of the ship in tons
     double getConsumption() const;
-    /// Get the caracteristics of the ship
-    /// \return a string containing the caracteristics of the ship
-    std::string toString() const;
     /// Get the model of the ship
     /// \return the model of the ship
     virtual std::string getModel() const = 0;

@@ -18,11 +18,14 @@ void Ship::setNickname(const std::string &newNickname) {
 double Ship::getConsumption() const {
     return std::cbrt(getModelWeight()) / 2 * log10(getModelWeight() * speed) * log10(distance + 1);   
 }
+void Ship::write(std::ostream &out) const {
+    out << (nickname.empty() ? "" : nickname + " ");
+    out << "[" << getModel() << " #" << serialNumber << "]\n"
+    << "weight : " << getModelWeight() << " tons\n"
+    << "max speed : " << getModelSpeedMax() << " MGLT\n";
+}
 
-std::string Ship::toString() const {
-    std::string info = nickname.empty() ? "" : nickname + " ";
-    info += "[" + getModel() + " #" + std::to_string(serialNumber) + "]\n"
-    + "weight : " + std::to_string(getModelWeight()) + " tons\n"
-    + "max speed : " + std::to_string(getModelSpeedMax()) + " MGLT\n";
-    return info;
+std::ostream& operator<<(std::ostream& out, const Ship& ship) {
+    ship.write(out);
+    return out;
 }

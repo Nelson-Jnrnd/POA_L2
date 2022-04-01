@@ -62,26 +62,6 @@ void Squadron::addShip(Ship *ship) {
     }
 }
 
-std::string Squadron::toString() const {
-    std::string result = "Squadron: " + name + " :\n";
-
-    result += "-- Leader:\n";
-    if(leader != nullptr) {
-        result += leader->getShip()->toString();
-    } else {
-        result += "None\n";
-    }
-    result += "\n-- Members:\n";
-    Member *currentMember = firstMember;
-    while (currentMember != nullptr) {
-        if(currentMember != leader) {
-            result += "\n" + currentMember->getShip()->toString() + "\n";
-        }
-        currentMember = currentMember->getNext();
-    }
-    return result;
-}
-
 /// Member
 
 Squadron::Member::Member(Ship *ship) : ship(ship), next(nullptr) {}
@@ -100,4 +80,29 @@ void Squadron::Member::setNext(Squadron::Member *next) {
 
 bool Squadron::Member::hasNext() {
     return next != nullptr;
+}
+
+void Squadron::write(std::ostream &out) const {
+    out << "Squadron: " + name + " :\n";
+    out << "-- Leader:\n";
+    if(leader != nullptr) {
+        out << *leader->getShip();
+    } else {
+        out << "None\n";
+    }
+    out << "\n-- Members:\n";
+    Squadron::Member *currentMember = firstMember;
+    while (currentMember != nullptr) {
+        if(currentMember != leader) {
+            out << "\n" << *currentMember->getShip() << "\n";
+        }
+        currentMember = currentMember->getNext();
+    }
+}
+
+/// Friend
+
+std::ostream& operator<<(std::ostream& out, const Squadron& squadron) {
+    squadron.write(out);
+    return out;
 }
