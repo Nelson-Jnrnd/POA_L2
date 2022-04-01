@@ -3,6 +3,7 @@
 //
 
 #include "CargoShip.hpp"
+#include <iomanip>
 
 CargoShip::CargoShip(unsigned int serialNumber, double currentCapacity) : currentCapacity(currentCapacity), Ship(serialNumber) {}
 
@@ -10,8 +11,9 @@ double CargoShip::getCurrentCapacity() const {
     return currentCapacity;
 }
 
-void CargoShip::write(std::ostream &out) const {
-    Ship::write(out);
-    out << "cargo : " << std::to_string(currentCapacity) << " tons (max : "
-     << std::to_string(getMaxCapacity()) << ")\n";
+std::ostream& CargoShip::toStream(std::ostream &out) const {
+    Ship::toStream(out);
+    out << std::fixed << std::setprecision(1) << "cargo : " << currentCapacity << " tons (max : "
+    << getMaxCapacity() << ")\n";
+    return out;
 }

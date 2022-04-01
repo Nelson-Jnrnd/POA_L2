@@ -17,6 +17,6 @@ int main() {
 
     squad.setLeader(&blackLeader);
 
-    std::cout << std::setprecision(2) << squad;
+    std::cout << squad;
     return 0;
 }

@@ -82,7 +82,7 @@ bool Squadron::Member::hasNext() {
     return next != nullptr;
 }
 
-void Squadron::write(std::ostream &out) const {
+std::ostream& Squadron::toStream(std::ostream &out) const {
     out << "Squadron: " + name + " :\n";
     out << "-- Leader:\n";
     if(leader != nullptr) {
@@ -98,11 +98,10 @@ void Squadron::write(std::ostream &out) const {
         }
         currentMember = currentMember->getNext();
     }
+    return out;
 }
-
 /// Friend
 
 std::ostream& operator<<(std::ostream& out, const Squadron& squadron) {
-    squadron.write(out);
-    return out;
+    return squadron.toStream(out);
 }

@@ -7,6 +7,10 @@
 
 #include "iostream"
 
+class Ship;
+
+std::ostream& operator<<(std::ostream& out, const Ship& ship);
+
 /// Represent a Star Wars spaceship
 class Ship {
     /// current speed of this spaceship in MGLT
@@ -22,10 +26,10 @@ protected:
 /// Constructor
 /// @serialNumber serial number of this ship
 Ship(unsigned int serialNumber);
-void write(std::ostream& out) const;
+
 public:
     friend std::ostream& operator<<(std::ostream& out, const Ship& ship);
-
+    virtual std::ostream& toStream(std::ostream& out) const;
     /// Give a new nickname to this ship
     /// \param newNickname nickname given to this ship
     void setNickname(const std::string &newNickname);

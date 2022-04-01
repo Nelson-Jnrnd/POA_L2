@@ -4,6 +4,7 @@
 
 #include "Ship.h"
 #include <cmath>
+#include <iomanip>
 
 Ship::Ship(unsigned int serialNumber) : speed(0), distance(0), nickname(""), serialNumber(serialNumber) {}
 
@@ -18,14 +19,14 @@ void Ship::setNickname(const std::string &newNickname) {
 double Ship::getConsumption() const {
     return std::cbrt(getModelWeight()) / 2 * log10(getModelWeight() * speed) * log10(distance + 1);   
 }
-void Ship::write(std::ostream &out) const {
-    out << (nickname.empty() ? "" : nickname + " ");
+std::ostream& Ship::toStream(std::ostream &out) const {
+    out << std::fixed << std::setprecision(2) << (nickname.empty() ? "" : nickname + " ");
     out << "[" << getModel() << " #" << serialNumber << "]\n"
     << "weight : " << getModelWeight() << " tons\n"
     << "max speed : " << getModelSpeedMax() << " MGLT\n";
+    return out;
 }
 
 std::ostream& operator<<(std::ostream& out, const Ship& ship) {
-    ship.write(out);
-    return out;
+    return ship.toStream(out);
 }

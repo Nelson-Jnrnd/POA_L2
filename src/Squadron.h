@@ -31,7 +31,6 @@ class Squadron {
 
     Member* getMember(Ship* ship);
     bool isEmpty() const;
-    void write(std::ostream& out) const;
 public:
     Squadron(const std::string &name);
     Squadron(const Squadron& squadron);
@@ -53,6 +52,7 @@ public:
     /// Get leader of the squadron
     Ship* getLeader() const;
 
+    std::ostream& toStream(std::ostream &out) const;
 };
 
 
