@@ -9,14 +9,28 @@
 #include "Ship.h"
 
 class Squadron {
+    class Member {
+        Ship* ship;
+        Member* next;
+    public:
+        Member(Ship* ship);
+        Ship* getShip();
+        Member* getNext();
+        void setNext(Member* next);
+        bool hasNext();
+    };
+
     /// Ships contained in the squadron
-    std::vector<Ship*> ships;
+    Member *firstMember;
 
     /// Leader of the squadron
-    Ship *leader;
+    Member *leader;
 
     /// Name of the squadron
     std::string name;
+
+    Member* getMember(Ship* ship);
+    bool isEmpty();
 public:
     Squadron(const std::string &name);
     Squadron(const Squadron& squadron);
@@ -25,13 +39,12 @@ public:
     void addShip(Ship* ship);
     void removeShip(Ship* ship);
     bool containsShip(Ship* ship);
-    unsigned int getSize() const;
+    
     void print() const; 
 
     /// Set leader of the squadron
     void setLeader(Ship* ship);
     /// Remove leader of the squadron
-    void removeLeader();
     /// Get leader of the squadron
     Ship* getLeader() const;
 

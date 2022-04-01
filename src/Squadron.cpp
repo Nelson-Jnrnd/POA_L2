@@ -4,48 +4,80 @@
 
 #include "Squadron.h"
 
-Squadron::Squadron(const std::string &name) : name(name) {}
+Squadron::Squadron(const std::string &name) : name(name), firstMember(nullptr), leader(nullptr) {}
 
-Squadron::Squadron(const Squadron &squadron) : name(squadron.name), ships(squadron.ships) {}
+Squadron::Squadron(const Squadron &squadron) : name(squadron.name) {}
 
 Squadron::~Squadron() {
-    for (auto ship : ships) {
-        delete ship;
+    Member *currentMember = firstMember;
+    while (currentMember != nullptr) {
+        Member *nextMember = currentMember->getNext();
+        delete currentMember;
+        currentMember = nextMember;
     }
 }
 
-Squadron& Squadron::Squadron::operator=(const Squadron &squadron) {
-    if (this != &squadron) {
-        name = squadron.name;
-        ships = squadron.ships;
+void Squadron::setLeader(Ship *ship) {
+    if (ship == nullptr) {
+        throw std::invalid_argument("Ship cannot be nullptr");
     }
-    return *this;
+    Member *member = getMember(ship);
+    if (member == nullptr) {
+        throw std::invalid_argument("Ship is not in the squadron");
+    }
+    leader = member;
+}
+
+bool Squadron::isEmpty() {
+    return firstMember == nullptr;
+}
+
+Squadron::Member* Squadron::getMember(Ship *ship) {
+    if(ship == nullptr) {
+        throw std::invalid_argument("Ship cannot be nullptr");
+    }
+    if(isEmpty()) {
+        return nullptr;
+    }
+    Member *currentMember = firstMember;
+    while (currentMember != nullptr) {
+        if (currentMember->getShip() == ship) {
+            return currentMember;
+        }
+        currentMember = currentMember->getNext();
+    }
+    return nullptr;
 }
 
 void Squadron::addShip(Ship *ship) {
     if(ship == nullptr) {
         throw std::invalid_argument("Ship cannot be nullptr");
     }
-    if(containsShip(ship)) {
-        throw std::invalid_argument("Ship already in squadron");
+    if(isEmpty()) {
+        firstMember = new Member(ship);
+    } else {
+        Member* oldFirstMember = firstMember;
+        firstMember = new Member(ship);
+        firstMember->setNext(oldFirstMember);
     }
-    ships.push_back(ship);
 }
 
-void Squadron::setLeader(Ship *ship) {
-    if(ship == nullptr) {
-        throw std::invalid_argument("Ship cannot be nullptr");
-    }
-    if(!containsShip(ship)) {
-        throw std::invalid_argument("Ship not in squadron");
-    }
-    leader = ship;
+/// Member
+
+Squadron::Member::Member(Ship *ship) : ship(ship), next(nullptr) {}
+
+Squadron::Member* Squadron::Member::getNext() {
+    return next;
 }
 
-void Squadron::removeLeader() {
-    if(leader == nullptr) {
-        throw std::invalid_argument("Squadron has no leader");
-    }
-    leader = nullptr;
+Ship* Squadron::Member::getShip() {
+    return ship;
 }
 
+void Squadron::Member::setNext(Squadron::Member *next) {
+    this->next = next;
+}
+
+bool Squadron::Member::hasNext() {
+    return next != nullptr;
+}
