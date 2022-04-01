@@ -28,7 +28,7 @@ void Squadron::setLeader(Ship *ship) {
     leader = member;
 }
 
-bool Squadron::isEmpty() {
+bool Squadron::isEmpty() const {
     return firstMember == nullptr;
 }
 
@@ -60,6 +60,26 @@ void Squadron::addShip(Ship *ship) {
         firstMember = new Member(ship);
         firstMember->setNext(oldFirstMember);
     }
+}
+
+std::string Squadron::toString() const {
+    std::string result = "Squadron: " + name + " :\n";
+
+    result += "-- Leader:\n";
+    if(leader != nullptr) {
+        result += leader->getShip()->toString();
+    } else {
+        result += "None\n";
+    }
+    result += "\n-- Members:\n";
+    Member *currentMember = firstMember;
+    while (currentMember != nullptr) {
+        if(currentMember != leader) {
+            result += "\n" + currentMember->getShip()->toString() + "\n";
+        }
+        currentMember = currentMember->getNext();
+    }
+    return result;
 }
 
 /// Member

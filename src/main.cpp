@@ -16,6 +16,6 @@ int main() {
 
     squad.setLeader(&blackLeader);
 
-    std::cout << "stop";
+    std::cout << squad.toString();
     return 0;
 }

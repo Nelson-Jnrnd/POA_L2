@@ -30,7 +30,7 @@ class Squadron {
     std::string name;
 
     Member* getMember(Ship* ship);
-    bool isEmpty();
+    bool isEmpty() const;
 public:
     Squadron(const std::string &name);
     Squadron(const Squadron& squadron);
@@ -40,7 +40,7 @@ public:
     void removeShip(Ship* ship);
     bool containsShip(Ship* ship);
     
-    void print() const; 
+    std::string toString() const;
 
     /// Set leader of the squadron
     void setLeader(Ship* ship);

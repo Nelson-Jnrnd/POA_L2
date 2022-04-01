@@ -33,6 +33,9 @@ public:
     /// Get the current consumption of the ship in tons
     /// \return the consumption of the ship in tons
     double getConsumption() const;
+    /// Get the caracteristics of the ship
+    /// \return a string containing the caracteristics of the ship
+    std::string toString() const;
     /// Get the model of the ship
     /// \return the model of the ship
     virtual std::string getModel() const = 0;
