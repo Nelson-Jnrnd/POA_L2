@@ -22,5 +22,13 @@ int main() {
     squad -= shuttle;
 
     std::cout << squad;
+
+    std::cout << squad.getSize() << std::endl;
+
+    squad + shuttle;
+
+    std::cout << squad[2];
+
+    std::cout << squad;
     return 0;
 }

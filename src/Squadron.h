@@ -31,6 +31,7 @@ class Squadron {
 
     Member* getMember(const Ship* ship);
     bool isEmpty() const;
+
 public:
     Squadron(const std::string &name);
     Squadron(const Squadron& squadron);
@@ -49,12 +50,18 @@ public:
     /// Set leader of the squadron
     void setLeader(const Ship* ship);
     /// Remove leader of the squadron
+    void removeLeader();
     /// Get leader of the squadron
-    Ship* getLeader() const;
+    const Ship* getLeader() const;
 
     std::ostream& toStream(std::ostream &out) const;
     Squadron& operator+=(const Ship& ship);
     Squadron& operator-=(const Ship& ship);
+    Squadron& operator+(const Ship& ship);
+    Squadron& operator-(const Ship& ship);
+    const Ship& operator[](int index);
+
+    size_t getSize();
 };
 
 
