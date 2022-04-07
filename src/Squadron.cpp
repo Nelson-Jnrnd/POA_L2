@@ -107,6 +107,37 @@ bool Squadron::Member::hasNext() {
     return next != nullptr;
 }
 
+unsigned int Squadron::getMaximumSpeed() const {
+    if(isEmpty()) {
+        return 0;
+    }
+    unsigned int maxSpeed = 0;
+    Member *currentMember = firstMember;
+    while (currentMember != nullptr) {
+        if (currentMember->getShip()->getModelSpeedMax() < maxSpeed) {
+            maxSpeed = currentMember->getShip()->getModelSpeedMax();
+        }
+        currentMember = currentMember->getNext();
+    }
+    return maxSpeed;
+}
+
+double Squadron::getConsumption(unsigned distance, unsigned speed) const {
+    if(isEmpty()) {
+        return 0;
+    }
+    if(speed > getMaximumSpeed()) {
+        throw std::invalid_argument("Speed is greater than this squadron's maximum speed");
+    }
+    double consumption = 0;
+    Member *currentMember = firstMember;
+    while (currentMember != nullptr) {
+        consumption += currentMember->getShip()->getConsumption(distance, speed);
+        currentMember = currentMember->getNext();
+    }
+    return consumption;
+}
+
 std::ostream& Squadron::toStream(std::ostream &out) const {
     out << "Squadron: " + name + " :\n";
     out << "-- Leader:\n";

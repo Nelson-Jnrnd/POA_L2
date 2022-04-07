@@ -13,10 +13,6 @@ std::ostream& operator<<(std::ostream& out, const Ship& ship);
 
 /// Represent a Star Wars spaceship
 class Ship {
-    /// current speed of this spaceship in MGLT
-    unsigned speed;
-    /// distance travelled by this ship in mio. Km
-    double distance;
     /// nickname given to this spaceship, can be null
     std::string nickname;
     /// serial number of this ship
@@ -37,8 +33,10 @@ public:
     /// \return the nickname of the ship, if the ship has no nickname, returns an empty string
     std::string getNickname() const;
     /// Get the current consumption of the ship in tons
+    /// \param distance distance traveled in mio km
+    /// \param speed speed of the ship in MGLT
     /// \return the consumption of the ship in tons
-    double getConsumption() const;
+    double getConsumption(unsigned distance, unsigned speed) const;
     /// Get the model of the ship
     /// \return the model of the ship
     virtual std::string getModel() const = 0;
