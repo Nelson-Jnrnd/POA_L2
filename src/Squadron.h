@@ -33,7 +33,7 @@ class Squadron {
     bool isEmpty() const;
 
 public:
-    Squadron(const std::string &name);
+    explicit Squadron(const std::string &name);
     Squadron(const Squadron& squadron);
     Squadron& operator=(const Squadron& squadron);
     ~Squadron();
