@@ -6,7 +6,7 @@
 #include <cmath>
 #include <iomanip>
 
-Ship::Ship(unsigned int serialNumber) : speed(0), distance(0), nickname(""), serialNumber(serialNumber) {}
+Ship::Ship(unsigned int serialNumber) : nickname(""), serialNumber(serialNumber) {}
 
 void Ship::setNickname(const std::string &newNickname) {
     if (newNickname.empty()) {
@@ -16,7 +16,7 @@ void Ship::setNickname(const std::string &newNickname) {
     }
 }
 
-double Ship::getConsumption() const {
+double Ship::getConsumption(unsigned distance, unsigned speed) const {
     return std::cbrt(getModelWeight()) / 2 * log10(getModelWeight() * speed) * log10(distance + 1);   
 }
 std::ostream& Ship::toStream(std::ostream &out) const {

@@ -55,6 +55,14 @@ public:
     std::ostream& toStream(std::ostream &out) const;
     Squadron& operator+=(const Ship& ship);
     Squadron& operator-=(const Ship& ship);
+
+    /// Maximum speed this squadron can go at
+    unsigned int getMaximumSpeed() const;
+    /// Get the consumption of the squadron in tons
+    /// @param distance distance in mio kilometers
+    /// @param speed speed in MGHT
+    /// @return the consumption of the squadron in tons
+    double getConsumption(unsigned distance, unsigned speed) const;
 };
 
 
