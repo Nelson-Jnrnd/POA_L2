@@ -10,11 +10,12 @@
 
 class Squadron {
     class Member {
-        const Ship* ship;
+        Ship* ship;
         Member* next;
     public:
-        Member(const Ship* ship);
-        const Ship* getShip();
+        explicit Member(Ship* ship);
+        ~Member();
+        Ship* getShip();
         Member* getNext();
         void setNext(Member* next);
         bool hasNext();
@@ -30,8 +31,9 @@ class Squadron {
     std::string name;
 
     Member* getMember(const Ship* ship);
-    Member* getMember(unsigned index);
+    Member* getMember(unsigned index) const;
     bool isEmpty() const;
+    void emptyAndCopy(Squadron squadron);
 
 public:
     explicit Squadron(const std::string &name);
@@ -45,7 +47,7 @@ public:
     /// @return output stream
     friend std::ostream& operator<<(std::ostream& out, const Squadron& squadron);
 
-    void addShipToSelf(const Ship* ship);
+    void addShipToSelf(Ship* ship);
     Squadron addShip(const Ship* ship);
     void removeShipToSelf(const Ship* ship);
     Squadron removeShip(const Ship* ship);
@@ -56,6 +58,8 @@ public:
     void removeLeader();
     /// Get leader of the squadron
     const Ship* getLeader() const;
+    void setName(std::string name);
+    std::string getName();
 
     std::ostream& toStream(std::ostream &out) const;
     Squadron& operator+=(const Ship& ship);
@@ -65,15 +69,19 @@ public:
     Squadron& operator-(const Ship& ship);
     const Ship& operator[](int index);
 
-    size_t getSize();
+    ///
+    /// @return the size of the squadron
+    size_t getSize() const;
 
     /// Maximum speed this squadron can go at
     unsigned int getMaximumSpeed() const;
+
     /// Get the consumption of the squadron in tons
     /// @param distance distance in mio kilometers
     /// @param speed speed in MGHT
     /// @return the consumption of the squadron in tons
     double getConsumption(unsigned distance, unsigned speed) const;
+
 
 };
 

@@ -4,6 +4,8 @@
 
 #include "Squadron.hpp"
 
+#include <utility>
+
 Squadron::Squadron(const std::string &name) : name(name), firstMember(nullptr), leader(nullptr) {
 }
 
@@ -23,6 +25,11 @@ Squadron::~Squadron() {
         delete currentMember;
         currentMember = nextMember;
     }
+}
+
+Squadron &Squadron::operator=(const Squadron &squadron) {
+   this->emptyAndCopy(squadron);
+   return *this;
 }
 
 void Squadron::setLeader(const Ship *ship) {
@@ -57,7 +64,7 @@ Squadron::Member* Squadron::getMember(const Ship *ship) {
     return nullptr;
 }
 
-Squadron::Member* Squadron::getMember(unsigned index) {
+Squadron::Member* Squadron::getMember(unsigned index) const{
     size_t size = this->getSize() - 1;
    if(index < 0 || index > size)
       throw std::invalid_argument("Index out of bound");
@@ -70,7 +77,7 @@ Squadron::Member* Squadron::getMember(unsigned index) {
    return m;
 }
 
-void Squadron::addShipToSelf(const Ship *ship) {
+void Squadron::addShipToSelf(Ship *ship) {
     if(ship == nullptr) {
         throw std::invalid_argument("Ship cannot be nullptr");
     }
@@ -122,14 +129,14 @@ Squadron Squadron::removeShip(const Ship *ship) {
 
 /// Member
 
-Squadron::Member::Member(const Ship *ship) : ship(ship), next(nullptr) {}
+Squadron::Member::Member(Ship *ship) : ship(ship), next(nullptr) {}
 
 Squadron::Member* Squadron::Member::getNext() {
     return next;
 }
 
-const Ship* Squadron::Member::getShip() {
-    return ship;
+Ship* Squadron::Member::getShip() {
+    return this->ship;
 }
 
 void Squadron::Member::setNext(Squadron::Member *next) {
@@ -138,6 +145,10 @@ void Squadron::Member::setNext(Squadron::Member *next) {
 
 bool Squadron::Member::hasNext() {
     return next != nullptr;
+}
+
+Squadron::Member::~Member() {
+   delete this;
 }
 
 unsigned int Squadron::getMaximumSpeed() const {
@@ -234,7 +245,7 @@ bool Squadron::containsShip(const Ship *ship) {
    return false;
 }
 
-size_t Squadron::getSize() {
+size_t Squadron::getSize() const{
    if(this->isEmpty())
       return 0;
 
@@ -246,3 +257,28 @@ size_t Squadron::getSize() {
    }
    return counter;
 }
+
+void Squadron::emptyAndCopy(Squadron squadron) {
+   for (int i = 0; i < this->getSize(); ++i) {
+      delete this->getMember(i);
+   }
+   this->removeLeader();
+
+   for (int i = 0; i < squadron.getSize(); ++i) {
+      this->addShipToSelf(const_cast<Ship *>(squadron.getMember(i)->getShip()));
+   }
+   this->setLeader(squadron.getLeader());
+   this->setName(squadron.getName());
+}
+
+void Squadron::setName(std::string name) {
+   this->name = std::move(name);
+}
+
+std::string Squadron::getName() {
+   return this->name;
+}
+
+
+
+

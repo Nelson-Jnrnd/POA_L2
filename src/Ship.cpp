@@ -1,7 +1,3 @@
-//
-// Created by NelsonWork on 18.03.2022.
-//
-
 #include "Ship.hpp"
 #include <cmath>
 #include <iomanip>
@@ -29,4 +25,8 @@ std::ostream& Ship::toStream(std::ostream &out) const {
 
 std::ostream& operator<<(std::ostream& out, const Ship& ship) {
     return ship.toStream(out);
+}
+
+std::string Ship::getNickname() const {
+   return this->nickname;
 }

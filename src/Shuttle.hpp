@@ -12,7 +12,7 @@ class Shuttle : public CargoShip {
     static unsigned int serialNumberCounter;
     unsigned int getNextSerialNumber() override;
     public:
-        Shuttle(double currentCapacity);
+        explicit Shuttle(double currentCapacity);
         /// Get max capacity of the ship in tons
         /// \return max capacity of the ship in tons
         double getMaxCapacity() const override;

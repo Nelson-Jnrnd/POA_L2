@@ -29,7 +29,7 @@ protected:
      * 
      * @param serialNumber serial number of this ship
      */
-    Ship(unsigned int serialNumber);
+    explicit Ship(unsigned int serialNumber);
 
 public:
     friend std::ostream& operator<<(std::ostream& out, const Ship& ship);
