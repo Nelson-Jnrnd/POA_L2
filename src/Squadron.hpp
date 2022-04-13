@@ -30,6 +30,7 @@ class Squadron {
     std::string name;
 
     Member* getMember(const Ship* ship);
+    Member* getMember(unsigned index);
     bool isEmpty() const;
 
 public:
@@ -44,8 +45,10 @@ public:
     /// @return output stream
     friend std::ostream& operator<<(std::ostream& out, const Squadron& squadron);
 
-    void addShip(const Ship* ship);
-    void removeShip(const Ship* ship);
+    void addShipToSelf(const Ship* ship);
+    Squadron addShip(const Ship* ship);
+    void removeShipToSelf(const Ship* ship);
+    Squadron removeShip(const Ship* ship);
     bool containsShip(const Ship* ship);
     /// Set leader of the squadron
     void setLeader(const Ship* ship);

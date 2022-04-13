@@ -4,9 +4,17 @@
 
 #include "Squadron.hpp"
 
-Squadron::Squadron(const std::string &name) : name(name), firstMember(nullptr), leader(nullptr) {}
+Squadron::Squadron(const std::string &name) : name(name), firstMember(nullptr), leader(nullptr) {
+}
 
-Squadron::Squadron(const Squadron &squadron) : name(squadron.name) {}
+Squadron::Squadron(const Squadron &squadron) : Squadron::Squadron(squadron.name) {
+    Member *currentMember = squadron.firstMember;
+    while (currentMember != nullptr) {
+        addShipToSelf(currentMember->getShip());
+        currentMember = currentMember->getNext();
+    }
+    setLeader(squadron.leader->getShip());
+}
 
 Squadron::~Squadron() {
     Member *currentMember = firstMember;
@@ -49,7 +57,20 @@ Squadron::Member* Squadron::getMember(const Ship *ship) {
     return nullptr;
 }
 
-void Squadron::addShip(const Ship *ship) {
+Squadron::Member* Squadron::getMember(unsigned index) {
+    size_t size = this->getSize() - 1;
+   if(index < 0 || index > size)
+      throw std::invalid_argument("Index out of bound");
+
+   Member* m = this->firstMember;
+   for (int i = 0; i < size - index; ++i) {
+      if (m->hasNext())
+         m = m->getNext();
+   }
+   return m;
+}
+
+void Squadron::addShipToSelf(const Ship *ship) {
     if(ship == nullptr) {
         throw std::invalid_argument("Ship cannot be nullptr");
     }
@@ -62,7 +83,13 @@ void Squadron::addShip(const Ship *ship) {
     }
 }
 
-void Squadron::removeShip(const Ship *ship) {
+Squadron Squadron::addShip(const Ship *ship) {
+    Squadron newSquadron(*this);
+    newSquadron.addShipToSelf(ship);
+    return newSquadron;
+}
+
+void Squadron::removeShipToSelf(const Ship *ship) {
     if(ship == nullptr) {
         throw std::invalid_argument("Ship cannot be nullptr");
     }
@@ -85,6 +112,12 @@ void Squadron::removeShip(const Ship *ship) {
         currentMember = currentMember->getNext();
     }
     throw std::invalid_argument("Ship is not in the squadron");
+}
+
+Squadron Squadron::removeShip(const Ship *ship) {
+    Squadron newSquadron(*this);
+    newSquadron.removeShipToSelf(ship);
+    return newSquadron;
 }
 
 /// Member
@@ -158,17 +191,16 @@ std::ostream& Squadron::toStream(std::ostream &out) const {
 }
 
 Squadron& Squadron::operator+= (const Ship& ship) {
-    addShip(&ship);
+    addShipToSelf(&ship);
     return *this;
 }
 
 Squadron& Squadron::operator-= (const Ship &ship) {
-    removeShip(&ship);
+    removeShipToSelf(&ship);
     return *this;
 }
 
 /// Friend
-
 std::ostream& operator<<(std::ostream& out, const Squadron& squadron) {
     return squadron.toStream(out);
 }
@@ -180,19 +212,9 @@ Squadron &Squadron::operator+(const Ship &ship) {
 Squadron &Squadron::operator-(const Ship &ship) {
    return *this -= ship;
 }
-
+// TODO unsigned index + check le const des fonctions
 const Ship &Squadron::operator[](const int index) {
-
-   size_t size = this->getSize() - 1;
-   if(index < 0 || index > size)
-      throw std::invalid_argument("Index out of bound");
-
-   Member* m = this->firstMember;
-   for (int i = 0; i < size - index; ++i) {
-      if (m->hasNext())
-         m = m->getNext();
-   }
-   return *m->getShip();
+    return *getMember(index)->getShip();
 }
 
 const Ship *Squadron::getLeader() const {

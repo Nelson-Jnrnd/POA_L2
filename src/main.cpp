@@ -30,5 +30,9 @@ int main() {
     std::cout << squad[2];
 
     std::cout << squad;
+
+    Squadron t = squad.removeShip(&shuttle);
+
+    std::cout << "original ----" << squad << " after ----" << t;
     return 0;
 }
