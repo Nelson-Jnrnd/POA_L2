@@ -6,7 +6,7 @@
 #define POA_L2_CARGOSHIP_HPP
 
 
-#include "Ship.h"
+#include "Ship.hpp"
 
 class CargoShip : public Ship {
     protected:
