@@ -25,14 +25,14 @@ int main() {
 
     std::cout << squad.getSize() << std::endl;
 
-    squad + shuttle;
+    Squadron t(squad + shuttle);
 
-    std::cout << squad[2];
+    std::cout << t[2];
 
-    std::cout << squad;
+    std::cout << t;
 
-    Squadron t = squad.removeShip(&shuttle);
+    Squadron j = t.removeShip(&shuttle);
 
-    std::cout << "original ----" << squad << " after ----" << t;
+    std::cout << "original ----" << squad << " after ----" << j;
     return 0;
 }
