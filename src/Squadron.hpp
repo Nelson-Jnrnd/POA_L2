@@ -23,7 +23,7 @@ class Squadron {
         /**
          * Pointer to the ship of the member
          */    
-        const Ship* ship; //TODO maybe virer le const
+        Ship* ship;
         /**
          * Pointer to the next member of the squadron
          */
@@ -33,12 +33,12 @@ class Squadron {
          * Construct a new Member object
          * @param ship the ship of the member
          */
-        Member(const Ship* ship);
+        explicit Member(Ship* ship);
         /**
          * Get the ship of the member
          * @return the ship of the member
          */
-        const Ship* getShip();
+        Ship* getShip();
         /**
          * Get the next member of the squadron
          * @return the next member of the squadron
@@ -72,19 +72,20 @@ class Squadron {
      * @param parameter-ship the ship to search
      * @return the member of the squadron that has the ship passed as parameter.
      */
-    Member* getMember(const Ship* ship);
+    Member* getMember(const Ship* ship) const;
     /**
      * Get the member of the squadron at the given index
      * 
      * @param index the index of the member to get
      * @return Member* the member of the squadron at the given index
      */
-    Member* getMember(unsigned index);
+    Member* getMember(unsigned index) const;
     /**
     * Checks if the squadron is empty.
     * @return true if the squadron is empty, false otherwise
     */
     bool isEmpty() const;
+    void emptyAndCopy(Squadron squadron);
 
 public:
     /**
@@ -115,13 +116,13 @@ public:
      * Adds a ship to the squadron
      * @param ship the ship to add
      */
-    void addShipToSelf(const Ship* ship);
+    void addShipToSelf(Ship* ship);
     /**
      * Adds a ship to a copy of the squadron
      * @param ship the ship to add
      * @return the copy of the squadron with the ship added
      */
-    Squadron addShip(const Ship* ship);
+    Squadron addShip(Ship* ship);
     /**
      * Removes a ship from the squadron
      * @param ship the ship to remove
@@ -154,6 +155,8 @@ public:
      * @return the leader of the squadron
      */
     const Ship* getLeader() const;
+    void setName(std::string name);
+    std::string getName();
 
 
     /**
@@ -167,7 +170,7 @@ public:
      * Adds a ship to the squadron
      * @param ship the ship to add
      */
-    Squadron& operator+=(const Ship& ship);
+    Squadron& operator+=(Ship& ship);
     /**
      * Removes a ship from the squadron
      * @param ship the ship to remove
@@ -179,7 +182,7 @@ public:
      * @param ship the ship to add
      * @return the copy of the squadron with the ship added
      */
-    Squadron operator+(const Ship& ship);
+    Squadron operator+(Ship& ship);
     /**
      * Removes a ship from a copy of the squadron
      * @param ship the ship to remove
@@ -198,7 +201,7 @@ public:
      * Get the size of the squadron
      * @return the size of the squadron
      */
-    size_t getSize();
+    size_t getSize() const;
 
     /**
      * Get the maximum speed this squadron can go at
@@ -219,6 +222,7 @@ public:
      * @return the consumption of the squadron in tons
      */
     double getConsumption(unsigned distance, unsigned speed) const;
+
 
 };
 
