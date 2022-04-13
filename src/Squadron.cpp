@@ -172,3 +172,55 @@ Squadron& Squadron::operator-= (const Ship &ship) {
 std::ostream& operator<<(std::ostream& out, const Squadron& squadron) {
     return squadron.toStream(out);
 }
+
+Squadron &Squadron::operator+(const Ship &ship) {
+   return *this += ship;
+}
+
+Squadron &Squadron::operator-(const Ship &ship) {
+   return *this -= ship;
+}
+
+const Ship &Squadron::operator[](const int index) {
+
+   size_t size = this->getSize() - 1;
+   if(index < 0 || index > size)
+      throw std::invalid_argument("Index out of bound");
+
+   Member* m = this->firstMember;
+   for (int i = 0; i < size - index; ++i) {
+      if (m->hasNext())
+         m = m->getNext();
+   }
+   return *m->getShip();
+}
+
+const Ship *Squadron::getLeader() const {
+   return this->leader->getShip();
+}
+
+void Squadron::removeLeader() {
+   this->leader = nullptr;
+}
+
+bool Squadron::containsShip(const Ship *ship) {
+   if(ship == nullptr)
+      throw std::invalid_argument("Ship cannot be nullptr");
+
+   if (this->getMember(ship) != nullptr)
+         return true;
+   return false;
+}
+
+size_t Squadron::getSize() {
+   if(this->isEmpty())
+      return 0;
+
+   Member* m = this->firstMember;
+   unsigned int counter = 1;
+   while (m->hasNext()){
+      counter++;
+      m = m->getNext();
+   }
+   return counter;
+}
