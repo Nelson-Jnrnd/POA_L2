@@ -141,11 +141,11 @@ unsigned int Squadron::getMaximumSpeed() const {
     return maxSpeed;
 }
 
-unsigned int Squadron::getTotalWeight() const {
+double Squadron::getTotalWeight() const {
     if(isEmpty()) {
         return 0;
     }
-    unsigned int totalWeight = 0;
+    double totalWeight = 0;
     Member *currentMember = firstMember;
     while (currentMember != nullptr) {
         totalWeight += currentMember->getShip()->getModelWeight();
@@ -288,7 +288,3 @@ void Squadron::setName(std::string name) {
 std::string Squadron::getName() {
    return this->name;
 }
-
-
-
-
