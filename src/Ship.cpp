@@ -18,8 +18,8 @@ double Ship::getConsumption(unsigned distance, unsigned speed) const {
 std::ostream& Ship::toStream(std::ostream &out) const {
     out << std::fixed << std::setprecision(2) << (nickname.empty() ? "" : nickname + " ");
     out << "[" << getModel() << " #" << serialNumber << "]\n"
-    << "weight : " << getModelWeight() << " tons\n"
-    << "max speed : " << getModelSpeedMax() << " MGLT\n";
+    << " weight : " << getModelWeight() << " tons\n"
+    << " max speed : " << getModelSpeedMax() << " MGLT\n";
     return out;
 }
 

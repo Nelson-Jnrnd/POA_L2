@@ -155,8 +155,8 @@ unsigned int Squadron::getMaximumSpeed() const {
     if(isEmpty()) {
         return 0;
     }
-    unsigned int maxSpeed = 0;
-    Member *currentMember = firstMember;
+    unsigned int maxSpeed = firstMember->getShip()->getModelSpeedMax();
+    Member *currentMember = firstMember->getNext();
     while (currentMember != nullptr) {
         if (currentMember->getShip()->getModelSpeedMax() < maxSpeed) {
             maxSpeed = currentMember->getShip()->getModelSpeedMax();
@@ -166,6 +166,18 @@ unsigned int Squadron::getMaximumSpeed() const {
     return maxSpeed;
 }
 
+unsigned int Squadron::getTotalWeight() const {
+    if(isEmpty()) {
+        return 0;
+    }
+    unsigned int totalWeight = 0;
+    Member *currentMember = firstMember;
+    while (currentMember != nullptr) {
+        totalWeight += currentMember->getShip()->getModelWeight();
+        currentMember = currentMember->getNext();
+    }
+    return totalWeight;
+}
 double Squadron::getConsumption(unsigned distance, unsigned speed) const {
     if(isEmpty()) {
         return 0;
@@ -183,7 +195,9 @@ double Squadron::getConsumption(unsigned distance, unsigned speed) const {
 }
 
 std::ostream& Squadron::toStream(std::ostream &out) const {
-    out << "Squadron: " + name + " :\n";
+    out << "Squadron: " << name << " :\n";
+    out << " max speed: " << getMaximumSpeed() << " MGLT\n";
+    out << " total weight: " << getTotalWeight() << " tons\n";
     out << "-- Leader:\n";
     if(leader != nullptr) {
         out << *leader->getShip();
@@ -216,12 +230,12 @@ std::ostream& operator<<(std::ostream& out, const Squadron& squadron) {
     return squadron.toStream(out);
 }
 
-Squadron &Squadron::operator+(const Ship &ship) {
-   return *this += ship;
+Squadron Squadron::operator+(const Ship &ship) {
+   return addShip(&ship);
 }
 
-Squadron &Squadron::operator-(const Ship &ship) {
-   return *this -= ship;
+Squadron Squadron::operator-(const Ship &ship) {
+   return removeShip(&ship);
 }
 // TODO unsigned index + check le const des fonctions
 const Ship &Squadron::operator[](const int index) {

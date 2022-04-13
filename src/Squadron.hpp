@@ -65,8 +65,8 @@ public:
     Squadron& operator+=(const Ship& ship);
     Squadron& operator-=(const Ship& ship);
 
-    Squadron& operator+(const Ship& ship);
-    Squadron& operator-(const Ship& ship);
+    Squadron operator+(const Ship& ship);
+    Squadron operator-(const Ship& ship);
     const Ship& operator[](int index);
 
     ///
@@ -75,6 +75,7 @@ public:
 
     /// Maximum speed this squadron can go at
     unsigned int getMaximumSpeed() const;
+    unsigned int getTotalWeight() const;
 
     /// Get the consumption of the squadron in tons
     /// @param distance distance in mio kilometers
