@@ -8,7 +8,7 @@
 
 #include "Ship.hpp"
 /**
- * @brief Represent a specific model of a Star Wars spaceship
+ * Represent a specific model of a Star Wars spaceship
  * @link Ship
  * @version 1.0
  * @author Nelson Jeanrenaud
@@ -18,14 +18,14 @@ class TieLn : public Ship {
     /// Count of the number of ships created
     static unsigned int serialNumberCounter;
     /**
-     * @brief Get the Next Serial Number object. Increments the counter
+     * Get the Next Serial Number object. Increments the counter
      * 
      * @return the next serial number
      */
     unsigned int getNextSerialNumber() override;
     public:
         /**
-         * @brief Construct a new TieLn object
+         * Construct a new TieLn object
          */
         TieLn();
         std::string getModel() const override;

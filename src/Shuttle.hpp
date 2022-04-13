@@ -8,24 +8,39 @@
 
 #include "CargoShip.hpp"
 
+/**
+ * Represent a specific model of a Star Wars spaceship cargo
+ * @link CargoShip
+ * @version 1.0
+ * @author Nelson Jeanrenaud
+ * @author André Marques Nora
+ */
 class Shuttle : public CargoShip {
+    /// Count of the number of ships created
     static unsigned int serialNumberCounter;
     unsigned int getNextSerialNumber() override;
     public:
         Shuttle(double currentCapacity);
-        /// Get max capacity of the ship in tons
-        /// \return max capacity of the ship in tons
+        /** 
+         * Get max capacity of the ship in tons
+         * @return max capacity of the ship in tons
+         */
         double getMaxCapacity() const override;
-        /// Get the weight of the ship in tons
-        /// \return the weight of the ship in tons
+        /**
+         * Get the weight of the ship in tons
+         * @return the weight of the ship in tons
+         */
         double getModelWeight() const override;
-        /// Get the model of the ship
-        /// \return the model of the ship
+        /**
+         * Get the model of the ship
+         * @return the model of the ship
+         */
         std::string getModel() const override;
-        /// Get the maximum speed of the ship model
-        /// \return the maximum speed of the ship model
+        /**
+         * Get the maximum speed of the ship model
+         * @return the maximum speed of the ship model
+         */
         unsigned int getModelSpeedMax() const override;
-
 };
 
 

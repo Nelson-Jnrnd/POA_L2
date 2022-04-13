@@ -8,6 +8,7 @@ Squadron::Squadron(const std::string &name) : name(name), firstMember(nullptr), 
 }
 
 Squadron::Squadron(const Squadron &squadron) : Squadron::Squadron(squadron.name) {
+    /* Copying the squadron. */
     Member *currentMember = squadron.firstMember;
     while (currentMember != nullptr) {
         addShipToSelf(currentMember->getShip());
@@ -17,6 +18,7 @@ Squadron::Squadron(const Squadron &squadron) : Squadron::Squadron(squadron.name)
 }
 
 Squadron::~Squadron() {
+    /* Deleting the members of the squadron. */
     Member *currentMember = firstMember;
     while (currentMember != nullptr) {
         Member *nextMember = currentMember->getNext();
@@ -120,26 +122,6 @@ Squadron Squadron::removeShip(const Ship *ship) {
     return newSquadron;
 }
 
-/// Member
-
-Squadron::Member::Member(const Ship *ship) : ship(ship), next(nullptr) {}
-
-Squadron::Member* Squadron::Member::getNext() {
-    return next;
-}
-
-const Ship* Squadron::Member::getShip() {
-    return ship;
-}
-
-void Squadron::Member::setNext(Squadron::Member *next) {
-    this->next = next;
-}
-
-bool Squadron::Member::hasNext() {
-    return next != nullptr;
-}
-
 unsigned int Squadron::getMaximumSpeed() const {
     if(isEmpty()) {
         return 0;
@@ -167,6 +149,7 @@ unsigned int Squadron::getTotalWeight() const {
     }
     return totalWeight;
 }
+
 double Squadron::getConsumption(unsigned distance, unsigned speed) const {
     if(isEmpty()) {
         return 0;
@@ -212,6 +195,26 @@ Squadron& Squadron::operator+= (const Ship& ship) {
 Squadron& Squadron::operator-= (const Ship &ship) {
     removeShipToSelf(&ship);
     return *this;
+}
+
+/// Member
+
+Squadron::Member::Member(const Ship *ship) : ship(ship), next(nullptr) {}
+
+Squadron::Member* Squadron::Member::getNext() {
+    return next;
+}
+
+const Ship* Squadron::Member::getShip() {
+    return ship;
+}
+
+void Squadron::Member::setNext(Squadron::Member *next) {
+    this->next = next;
+}
+
+bool Squadron::Member::hasNext() {
+    return next != nullptr;
 }
 
 /// Friend

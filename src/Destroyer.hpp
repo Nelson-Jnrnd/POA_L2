@@ -7,36 +7,44 @@
 
 #include "CargoShip.hpp"
 
+/**
+ * Represent a specific model of a Star Wars spaceship cargo
+ * @link CargoShip
+ * @version 1.0
+ * @author Nelson Jeanrenaud
+ * @author André Marques Nora
+ */
 class Destroyer : public CargoShip {
+    /// Count of the number of ships created
     static unsigned int serialNumberCounter;
     unsigned int getNextSerialNumber() override;
 public:
     /**
-     * @brief Construct a new Destroyer ship object
+     * Construct a new Destroyer ship object
      * @param currentCapacity - current capacity of the ship in tons
      */
     Destroyer(double currentCapacity);
 
     /**
-     * @brief Get max capacity of the ship in tons
+     * Get max capacity of the ship in tons
      * @return max capacity of the ship in tons
      */
     double getMaxCapacity() const override;
 
     /**
-     * @brief Get the weight of the ship in tons
+     * Get the weight of the ship in tons
      * @return the weight of the ship in tons
      */
     double getModelWeight() const override;
 
     /**
-     * @brief Get the model of the ship
+     * Get the model of the ship
      * @return the model of the ship
      */
     std::string getModel() const override;
 
     /**
-     * @brief Get the maximum speed of the ship model
+     * Get the maximum speed of the ship model
      * @return the maximum speed of the ship model
      */
     unsigned int getModelSpeedMax() const override;

@@ -13,7 +13,7 @@ std::ostream& operator<<(std::ostream& out, const Ship& ship);
 
 
 /**
- * @brief Represent a Star Wars spaceship
+ * Represent a Star Wars spaceship
  * @version 1.0
  * @author Nelson Jeanrenaud
  * @author André Marques Nora
@@ -25,7 +25,7 @@ class Ship {
     unsigned int serialNumber;
 protected:
     /**
-     * @brief Construct a new Ship object
+     * Construct a new Ship object
      * 
      * @param serialNumber serial number of this ship
      */
@@ -35,43 +35,43 @@ public:
     friend std::ostream& operator<<(std::ostream& out, const Ship& ship);
     virtual std::ostream& toStream(std::ostream& out) const;
     /**
-     * @brief Give a new nickname to this ship
+     * Give a new nickname to this ship
      * 
      * @param newNickname nickname given to this ship
      */
     void setNickname(const std::string &newNickname);
     /**
-     * @brief Get the nickname of the ship
+     * Get the nickname of the ship
      * @return the nickname of the ship, if the ship has no nickname, returns an empty string
      */
     std::string getNickname() const;
     /**
-     * @brief Get the consumption of the ship in tons
+     * Get the consumption of the ship in tons
      * @param distance distance traveled in mio km
      * @param speed speed of the ship in MGLT
      * @return the consumption of the ship in tons
      */
     double getConsumption(unsigned distance, unsigned speed) const;
     /**
-     * @brief Get the Model object
+     * Get the Model object
      * 
-     * @return the model of the ship
+     * @return the model of the ship    
      */
     virtual std::string getModel() const = 0;
     /**
-     * @brief Get the maximum speed of the ship model
+     * Get the maximum speed of the ship model
      * 
      * @return the maximum speed of the ship model
      */
     virtual unsigned int getModelSpeedMax() const = 0;
     /**
-     * @brief Get the weight of the ship model
+     * Get the weight of the ship model
      * 
      * @return the weight of the ship model
      */
     virtual double getModelWeight() const = 0;
     /**
-     * @brief  Get the serial number of the next ship to be built
+     *  Get the serial number of the next ship to be built
      * 
      * @return the serial number of the next ship to be built
      */

@@ -9,6 +9,7 @@
 #include "Ship.hpp"
 /**
  * Representation of a squadron of ships
+ * @link Ship
  * @version 1.0
  * @author Nelson Jeanrenaud
  * @author André Marques Nora 
@@ -156,7 +157,7 @@ public:
 
 
     /**
-     * A method that writes the details of the squadron into the output stream.
+     * Writes the details of the squadron into the output stream.
      * @param out output stream
      * @return output stream
      */
