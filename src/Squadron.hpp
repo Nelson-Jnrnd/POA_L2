@@ -13,7 +13,6 @@
  * @version 1.0
  * @author Nelson Jeanrenaud
  * @author André Marques Nora 
- * 
  */
 class Squadron {
     /**
@@ -22,7 +21,7 @@ class Squadron {
     class Member {
         /**
          * Pointer to the ship of the member
-         */    
+         */
         Ship* ship;
         /**
          * Pointer to the next member of the squadron
