@@ -82,10 +82,76 @@ class Squadron {
    */
    bool isEmpty() const;
    /**
-   * Squadron copy another
+   * Empty the squadron
    * @param squadron the squadron to copy
    */
-   void emptyAndCopy(Squadron squadron);
+   void emptySquad();
+   /**
+    * Copy a squadron
+    * @param squadron squadron to copy
+    */
+   void copySquad(const Squadron& squadron);
+public:
+
+   /**
+   * Construct a new Squadron object
+   * @param name the name of the squadron
+   */
+   explicit Squadron(const std::string &name);
+   /**
+   * Construct a new Squadron object by copying the given squadron
+   *
+   * @param squadron the squadron to copy
+   */
+   Squadron(const Squadron& squadron);
+   /**
+    * operator of affectation
+    * @param squadron
+    * @return Squadron
+    */
+   Squadron& operator=(const Squadron& squadron);
+   /**
+   * Destroys the Squadron object
+   */
+   ~Squadron();
+
+   /** Writes the details of the squadron into the output stream
+   * @param out output stream
+   * @param squadron squadron to be written
+   * @return output stream
+   */
+   friend std::ostream& operator<<(std::ostream& out, const Squadron& squadron);
+
+   /**
+   * Set leader of the squadron
+   * @param ship the ship to set as leader
+   */
+   void setLeader(const Ship* ship);
+   /**
+   * Remove leader of the squadron
+   */
+   void removeLeader();
+   /**
+   * Get leader of the squadron
+   * @return the leader of the squadron
+   */
+   const Ship* getLeader() const;
+   /**
+    * Set name of squadron
+    * @param name squadron's name
+    */
+   void setName(std::string name);
+   /**
+    * Get name of squadron
+    * @return string squadron's name
+    */
+   std::string getName();
+   /**
+   * Writes the details of the squadron into the output stream.
+   * @param out output stream
+   * @return output stream
+   */
+   std::ostream& toStream(std::ostream &out) const;
    /**
    * Adds a ship to the squadron
    * @param ship the ship to add
@@ -108,64 +174,6 @@ class Squadron {
    * @return the copy of the squadron with the ship removed
    */
    Squadron removeShip(const Ship* ship);
-
-public:
-
-   /**
-   * Construct a new Squadron object
-   * @param name the name of the squadron
-   */
-   explicit Squadron(const std::string &name);
-   /**
-   * Construct a new Squadron object by copying the given squadron
-   *
-   * @param squadron the squadron to copy
-   */
-   Squadron(const Squadron& squadron);
-   Squadron& operator=(const Squadron& squadron);
-   /**
-   * Destroys the Squadron object
-   */
-   ~Squadron();
-
-   /** Writes the details of the squadron into the output stream
-   * @param out output stream
-   * @param squadron squadron to be written
-   * @return output stream
-   */
-   friend std::ostream& operator<<(std::ostream& out, const Squadron& squadron);
-
-   /**
-   * Checks if the squadron contains the ship passed as parameter.
-   * @param ship the ship to search
-   * @return true if the squadron contains the ship passed as parameter, false otherwise
-   */
-   bool containsShip(const Ship* ship);
-   /**
-   * Set leader of the squadron
-   * @param ship the ship to set as leader
-   */
-   void setLeader(const Ship* ship);
-   /**
-   * Remove leader of the squadron
-   */
-   void removeLeader();
-   /**
-   * Get leader of the squadron
-   * @return the leader of the squadron
-   */
-   const Ship* getLeader() const;
-   void setName(std::string name);
-   std::string getName();
-
-
-   /**
-   * Writes the details of the squadron into the output stream.
-   * @param out output stream
-   * @return output stream
-   */
-   std::ostream& toStream(std::ostream &out) const;
-
    /**
    * Adds a ship to the squadron
    * @param ship the ship to add

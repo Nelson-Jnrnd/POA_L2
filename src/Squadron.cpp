@@ -11,12 +11,7 @@ Squadron::Squadron(const std::string &name) : name(name), firstMember(nullptr), 
 
 Squadron::Squadron(const Squadron &squadron) : Squadron::Squadron(squadron.name) {
     /* Copying the squadron. */
-    Member *currentMember = squadron.firstMember;
-    while (currentMember != nullptr) {
-        addShipToSelf(currentMember->getShip());
-        currentMember = currentMember->getNext();
-    }
-    setLeader(squadron.leader->getShip());
+    this->copySquad(squadron);
 }
 
 Squadron::~Squadron() {
@@ -30,7 +25,10 @@ Squadron::~Squadron() {
 }
 
 Squadron &Squadron::operator=(const Squadron &squadron) {
-   this->emptyAndCopy(squadron);
+   this->emptySquad();
+
+   this->copySquad(squadron);
+
    return *this;
 }
 
@@ -130,6 +128,9 @@ Squadron Squadron::removeShip(const Ship *ship) {
 }
 
 unsigned int Squadron::getMaximumSpeed() const {
+   if(isEmpty())
+      return 0;
+
     unsigned int maxSpeed = firstMember->getShip()->getModelSpeedMax();
     Member *currentMember = firstMember->getNext();
     while (currentMember != nullptr) {
@@ -176,19 +177,24 @@ std::ostream& Squadron::toStream(std::ostream &out) const {
     out << " total weight: " << getTotalWeight() << " tons\n";
     out << "-- Leader:\n";
     if(leader != nullptr) {
-        out << *leader->getShip();
+        out << this->getLeader();
     } else {
         out << "None\n";
     }
     out << "\n-- Members:\n";
-    Squadron::Member *currentMember = firstMember;
-    while (currentMember != nullptr) {
-        if(currentMember != leader) {
+   if(firstMember != nullptr) {
+      Squadron::Member *currentMember = firstMember;
+      while (currentMember != nullptr) {
+         if (currentMember != leader) {
             out << "\n" << *currentMember->getShip() << "\n";
-        }
-        currentMember = currentMember->getNext();
-    }
-    return out;
+         }
+         currentMember = currentMember->getNext();
+      }
+   } else {
+      out << "None\n";
+   }
+
+   return out;
 }
 
 Squadron& Squadron::operator+= (Ship& ship) {
@@ -233,26 +239,20 @@ Squadron Squadron::operator+(Ship &ship) {
 Squadron Squadron::operator-(const Ship &ship) {
    return removeShip(&ship);
 }
-// TODO unsigned index + check le const des fonctions
+
 const Ship &Squadron::operator[](const int index) {
     return *getMember(index)->getShip();
 }
 
 const Ship *Squadron::getLeader() const {
+   if(this->leader == nullptr)
+      return nullptr;
+
    return this->leader->getShip();
 }
 
 void Squadron::removeLeader() {
    this->leader = nullptr;
-}
-
-bool Squadron::containsShip(const Ship *ship) {
-   if(ship == nullptr)
-      throw std::invalid_argument("Ship cannot be nullptr");
-
-   if (this->getMember(ship) != nullptr)
-         return true;
-   return false;
 }
 
 size_t Squadron::getSize() const{
@@ -268,17 +268,11 @@ size_t Squadron::getSize() const{
    return counter;
 }
 
-void Squadron::emptyAndCopy(Squadron squadron) {
+void Squadron::emptySquad() {
    for (int i = 0; i < this->getSize(); ++i) {
-      delete this->getMember(i);
+      this->removeShip(this->getMember(i)->getShip()) ;
    }
    this->removeLeader();
-
-   for (int i = 0; i < squadron.getSize(); ++i) {
-      this->addShipToSelf(const_cast<Ship *>(squadron.getMember(i)->getShip()));
-   }
-   this->setLeader(squadron.getLeader());
-   this->setName(squadron.getName());
 }
 
 void Squadron::setName(std::string name) {
@@ -287,4 +281,14 @@ void Squadron::setName(std::string name) {
 
 std::string Squadron::getName() {
    return this->name;
+}
+
+void Squadron::copySquad(const Squadron &squadron) {
+   Member *currentMember = squadron.firstMember;
+   while (currentMember != nullptr) {
+      addShipToSelf(currentMember->getShip());
+      currentMember = currentMember->getNext();
+   }
+   if(squadron.leader != nullptr)
+      setLeader(squadron.leader->getShip());
 }

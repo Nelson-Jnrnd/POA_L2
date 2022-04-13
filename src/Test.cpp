@@ -31,6 +31,8 @@ int main(){
    std::cout << "Consumption of blackThree for a distance of 1000 and speed at 50 MGLT : "
              << blackThree.getConsumption(1000,50) << std::endl;
 
+   std::cout << std::endl;
+
 
    /*
     * Test class Squadron
@@ -39,12 +41,14 @@ int main(){
    // constructor, add ship to squad and set a leader
    Squadron blackSquad("Black Squadron");
 
+   std::cout << blackSquad.getName() << std::endl;
+
    std::cout << blackSquad << std::endl;
 
    blackSquad += blackLeader;
    blackSquad += blackOne;
    blackSquad + blackTwo;
-   blackSquad + blackThree;
+   blackSquad += blackThree;
 
    blackSquad.setLeader(&blackLeader);
 
@@ -57,7 +61,7 @@ int main(){
 
    blackSquad2.removeLeader();
 
-   std::cout << blackSquad2 << std::endl;
+   std::cout << "squad2" << blackSquad2 << std::endl;
 
    blackSquad2 -= blackLeader;
    blackSquad2 - blackThree;
@@ -67,7 +71,7 @@ int main(){
    TieLn blackLeader2;
    blackLeader2.setNickname("Black Comet");
 
-   blackSquad2.setLeader(&blackLeader2);
+   //blackSquad2.setLeader(&blackLeader2);
 
    blackSquad2 += blackLeader2;
    blackSquad2.setLeader(&blackLeader2);
@@ -75,17 +79,23 @@ int main(){
    std::cout << blackSquad2 << std::endl;
 
    //operator= and operator[]
+   std::cout << "operator = & []" << std::endl;
+   std::cout << std::endl;
+
    Destroyer blueLeader(60);
    Shuttle blueOne(10);
 
    Squadron blueSquad("Blue Squadron");
 
-   blueSquad + blueLeader;
+   blueSquad += blueLeader;
    blueSquad += blueOne;
 
+   blueSquad.setLeader(&blueLeader);
    std::cout << blueSquad << std::endl;
 
    blueSquad = blackSquad;
+
+   blueSquad.setName("Blue Monkey");
 
    std::cout << blueSquad << std::endl;
 

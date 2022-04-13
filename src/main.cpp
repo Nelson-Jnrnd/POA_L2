@@ -8,6 +8,7 @@ int main() {
     blackLeader.setNickname("Black leader");
     TieLn blackTwo;
     Shuttle shuttle(23.4);
+    Shuttle shut(10);
 
     Squadron squad("Black Squadron");
     squad += blackLeader;
