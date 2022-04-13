@@ -29,11 +29,5 @@ int main() {
     std::cout << t[2];
 
     std::cout << t;
-
-    Squadron j = t.removeShip(&shuttle);
-
-    std::cout << "original ----" << squad << " after ----" << j;
-
-    std::cout << std::endl << "consomation: " << j.getConsumption(100, j.getMaximumSpeed());
     return 0;
 }
