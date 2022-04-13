@@ -3,4 +3,4 @@ project(POA_L2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(POA_L2 src/main.cpp src/Ship.cpp src/Ship.h src/Squadron.cpp src/Squadron.h src/TieLn.cpp src/TieLn.hpp src/TieIn.cpp src/TieIn.hpp src/CargoShip.cpp src/CargoShip.hpp src/Shuttle.cpp src/Shuttle.hpp src/Destroyer.cpp src/Destroyer.hpp)
+add_executable(POA_L2 src/main.cpp src/Ship.cpp src/Ship.hpp src/Squadron.cpp src/Squadron.hpp src/TieLn.cpp src/TieLn.hpp src/TieIn.cpp src/TieIn.hpp src/CargoShip.cpp src/CargoShip.hpp src/Shuttle.cpp src/Shuttle.hpp src/Destroyer.cpp src/Destroyer.hpp)

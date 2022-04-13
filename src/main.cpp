@@ -2,7 +2,7 @@
 #include <iomanip>
 #include "TieLn.hpp"
 #include "Shuttle.hpp"
-#include "Squadron.h"
+#include "Squadron.hpp"
 
 int main() {
     TieLn blackLeader;

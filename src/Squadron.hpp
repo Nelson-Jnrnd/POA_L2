@@ -2,11 +2,11 @@
 // Created by NelsonWork on 18.03.2022.
 //
 
-#ifndef POA_L2_SQUADRON_H
-#define POA_L2_SQUADRON_H
+#ifndef POA_L2_SQUADRON_HPP
+#define POA_L2_SQUADRON_HPP
 
 #include <vector>
-#include "Ship.h"
+#include "Ship.hpp"
 
 class Squadron {
     class Member {
@@ -75,4 +75,4 @@ public:
 };
 
 
-#endif //POA_L2_SQUADRON_H
+#endif //POA_L2_SQUADRON_HPP

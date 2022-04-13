@@ -2,7 +2,7 @@
 // Created by NelsonWork on 18.03.2022.
 //
 
-#include "Squadron.h"
+#include "Squadron.hpp"
 
 Squadron::Squadron(const std::string &name) : name(name), firstMember(nullptr), leader(nullptr) {}
 

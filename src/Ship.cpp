@@ -2,7 +2,7 @@
 // Created by NelsonWork on 18.03.2022.
 //
 
-#include "Ship.h"
+#include "Ship.hpp"
 #include <cmath>
 #include <iomanip>
 
