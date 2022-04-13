@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 #include "TieLn.hpp"
 #include "Shuttle.hpp"
 #include "Squadron.hpp"
