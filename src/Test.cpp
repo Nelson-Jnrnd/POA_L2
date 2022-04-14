@@ -154,5 +154,6 @@ int main(){
    const Squadron constantSquad3(constantSquad + blackThree);
    const Squadron constantSquad4(blueSquad + blackTwo);
 
+
    return 0;
 }
