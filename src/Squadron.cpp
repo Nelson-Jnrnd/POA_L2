@@ -83,7 +83,10 @@ void Squadron::addShipToSelf(Ship *ship) {
     }
     if(isEmpty()) {
         firstMember = new Member(ship);
-    } else {
+    } else if(getMember(ship) != nullptr){
+        throw std::invalid_argument("Ship is already in squadron");
+    }
+    else {
         Member* oldFirstMember = firstMember;
         firstMember = new Member(ship);
         firstMember->setNext(oldFirstMember);
@@ -112,6 +115,9 @@ void Squadron::removeShipToSelf(const Ship *ship) {
             } else {
                 previousMember->setNext(currentMember->getNext());
             }
+            if(currentMember == leader)
+                leader = nullptr;
+
             delete currentMember;
             return;
         }

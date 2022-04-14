@@ -30,7 +30,16 @@ int main(){
 
    std::cout << "Consumption of blackThree for a distance of 1000 and speed at 50 MGLT : "
              << blackThree.getConsumption(1000,50) << std::endl;
+/*
+   std::cout << "Consumption of blackThree for a distance of -1000 and speed at 50 MGLT : "
+             << blackThree.getConsumption(-1000,50) << std::endl;
 
+   std::cout << "Consumption of blackThree for a distance of 1000 and speed at -50 MGLT : "
+             << blackThree.getConsumption(1000,-50) << std::endl;
+
+    std::cout << "Consumption of blackThree for a distance of 1000 and speed at 500 MGLT : "
+              << blackThree.getConsumption(1000,500) << std::endl;
+*/
    std::cout << std::endl;
 
 
@@ -49,6 +58,9 @@ int main(){
    blackSquad += blackOne;
    blackSquad + blackTwo;
    blackSquad += blackThree;
+
+   //blackSquad += blackThree;
+   //blackSquad + blackThree;
 
    blackSquad.setLeader(&blackLeader);
 
@@ -72,6 +84,9 @@ int main(){
    blackSquad2 -= blackLeader;
    blackSquad2 - blackThree;
 
+   //blackSquad2 -= blackLeader;
+   //blackSquad2 - blackLeader;
+
    std::cout << blackSquad2 << std::endl;
 
    TieLn blackLeader2;
@@ -93,11 +108,20 @@ int main(){
 
    Squadron blueSquad("Blue Squadron");
 
+   blueSquad.removeLeader();
+
    blueSquad += blueLeader;
+
+   //blueSquad.setLeader(&blueOne);
+
    blueSquad += blueOne;
 
    blueSquad.setLeader(&blueLeader);
    std::cout << blueSquad << std::endl;
+
+   blueSquad -= blueLeader;
+
+   std::cout << "leader " << (blueSquad.getLeader() == nullptr ? " test good" : " test failed") << std::endl;
 
    blueSquad = blackSquad;
 
@@ -109,5 +133,18 @@ int main(){
 
    //std::cout << blueSquad[10] << std::endl;
 
-   return 0;
+    std::cout << "Consumption of blacksquad for a distance of 1000 and speed at 50 MGLT : "
+              << blackSquad.getConsumption(1000,50) << std::endl;
+
+   /* std::cout << "Consumption of blacksquad for a distance of -1000 and speed at 50 MGLT : "
+              << blackSquad.getConsumption(-1000,50) << std::endl;
+
+    std::cout << "Consumption of blacksquad for a distance of 1000 and speed at -50 MGLT : "
+              << blackSquad.getConsumption(1000,-50) << std::endl;
+
+    std::cout << "Consumption of blacksquad for a distance of 1000 and speed at 500 MGLT : "
+              << blackSquad.getConsumption(1000,500) << std::endl;
+*/
+
+    return 0;
 }
