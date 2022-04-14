@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="9mm" y="7mm" width="1812mm" height="704mm" viewBox="9 7 1812 704">
+<style type="text/css"><![CDATA[
+text { font:12px Dialog; }
+]]></style>
+<line x1="810" y1="70" x2="1120" y2="70" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<polygon points="810,70 823,63 836,70 823,77" style="fill:rgb(255,255,255);stroke:none" />
+<polygon points="810,70 823,63 836,70 823,77" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="810" y1="150" x2="1120" y2="150" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="300" y1="140" x2="370" y2="140" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<ellipse cx="360" cy="140" rx="10" ry="10" style="fill:rgb(255,246,219);stroke:none" />
+<ellipse cx="360" cy="140" rx="10" ry="10" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="350" y1="140" x2="370" y2="140" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="360" y1="150" x2="360" y2="130" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="1090" y1="340" x2="1090" y2="310" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="1090" y1="310" x2="1310" y2="310" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="1310" y1="310" x2="1310" y2="285" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<polygon points="1310,285 1318,305 1302,305" style="fill:rgb(255,255,255);stroke:none" />
+<polygon points="1310,285 1318,305 1302,305" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="1420" y1="340" x2="1420" y2="310" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="1420" y1="310" x2="1310" y2="310" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="1310" y1="310" x2="1310" y2="285" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<polygon points="1310,285 1318,305 1302,305" style="fill:rgb(255,255,255);stroke:none" />
+<polygon points="1310,285 1318,305 1302,305" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="1680" y1="340" x2="1680" y2="310" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="1680" y1="310" x2="1310" y2="310" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="1310" y1="310" x2="1310" y2="285" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<polygon points="1310,285 1318,305 1302,305" style="fill:rgb(255,255,255);stroke:none" />
+<polygon points="1310,285 1318,305 1302,305" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="1220" y1="530" x2="1220" y2="510" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="1220" y1="510" x2="1090" y2="510" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="1090" y1="510" x2="1090" y2="470" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<polygon points="1090,470 1098,490 1082,490" style="fill:rgb(255,255,255);stroke:none" />
+<polygon points="1090,470 1098,490 1082,490" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="960" y1="530" x2="960" y2="510" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="960" y1="510" x2="1090" y2="510" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="1090" y1="510" x2="1090" y2="470" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<polygon points="1090,470 1098,490 1082,490" style="fill:rgb(255,255,255);stroke:none" />
+<polygon points="1090,470 1098,490 1082,490" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+<line x1="970" y1="190" x2="974" y2="150" style="fill:none;stroke:rgb(64,64,64);stroke-dasharray:4;stroke-dashoffset:0" />
+<rect x="30" y="50" width="270" height="154" style="fill:rgb(255,247,225);stroke:none" />
+<rect x="30" y="50" width="270" height="154" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="140" y="73" style="font:12px Ubuntu">Member</text>
+<line x1="30" y1="85" x2="300" y2="85" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="38" y="100" style="font:12px Ubuntu">- ship : const_Ship*</text>
+<text x="38" y="114" style="font:12px Ubuntu">- next : Member*</text>
+<line x1="30" y1="123" x2="300" y2="123" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="38" y="138" style="font:12px Ubuntu">+ explicit_Member (ship : const_Ship*)</text>
+<text x="38" y="152" style="font:12px Ubuntu">+ const_getShip () : const_Ship*</text>
+<text x="38" y="166" style="font:12px Ubuntu">+ const_getNext (next : Member*) : Memb...</text>
+<text x="38" y="180" style="font:12px Ubuntu">+ setNext () : void</text>
+<text x="38" y="194" style="font:12px Ubuntu">+ const_hasNext () : bool</text>
+<rect x="370" y="50" width="440" height="503" style="fill:rgb(255,247,225);stroke:none" />
+<rect x="370" y="50" width="440" height="503" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="561" y="73" style="font:12px Ubuntu">Squadron</text>
+<line x1="370" y1="85" x2="810" y2="85" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="378" y="100" style="font:12px Ubuntu">- name : string</text>
+<text x="378" y="114" style="font:12px Ubuntu">- firstMember : Member*</text>
+<text x="378" y="128" style="font:12px Ubuntu">- leader : Member*</text>
+<line x1="370" y1="137" x2="810" y2="137" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="378" y="152" style="font:12px Ubuntu">+ explicit_Squadron (name : string)</text>
+<text x="378" y="166" style="font:12px Ubuntu">+ Squadron (squadron : const_Squadron&amp;)</text>
+<text x="378" y="180" style="font:12px Ubuntu">+ ~Squadron ()</text>
+<text x="378" y="194" style="font:12px Ubuntu">+ setLeader (ship : const_Ship&amp;) : void</text>
+<text x="378" y="208" style="font:12px Ubuntu">+ removeLeader () : void</text>
+<text x="378" y="222" style="font:12px Ubuntu">+ const_getLeader () : const_Ship*</text>
+<text x="378" y="236" style="font:12px Ubuntu">+ setName (name : string) : void</text>
+<text x="378" y="250" style="font:12px Ubuntu">+ const_getName () : string</text>
+<text x="378" y="264" style="font:12px Ubuntu">+ friend_operator&lt;&lt; (out : ostream&amp;, squadron : const_Squadron&amp;) : ostre...</text>
+<text x="378" y="278" style="font:12px Ubuntu">+ const_toStream (out : ostream&amp;) : ostream&amp;</text>
+<text x="378" y="292" style="font:12px Ubuntu">+ const_addShip (ship : const_Ship&amp;) : Squadron</text>
+<text x="378" y="306" style="font:12px Ubuntu">+ addShipToSelf (ship : const_Ship&amp;) : void</text>
+<text x="378" y="320" style="font:12px Ubuntu">+ const_removeShip (ship : const_Ship&amp;) : Squadron</text>
+<text x="378" y="334" style="font:12px Ubuntu">+ removeShipToSelf (ship : const_Ship&amp;) : void</text>
+<text x="378" y="348" style="font:12px Ubuntu">+ operator= (squadron : const_Squadron&amp;) : Squadron&amp;</text>
+<text x="378" y="362" style="font:12px Ubuntu">+ operator+= (ship : const_Ship&amp;) : Squadron&amp;</text>
+<text x="378" y="376" style="font:12px Ubuntu">+ operator-= (ship : const_Ship&amp;) : Squadron&amp;</text>
+<text x="378" y="390" style="font:12px Ubuntu">+ const_operator+ (ship : const_Ship&amp;) : Squadron</text>
+<text x="378" y="404" style="font:12px Ubuntu">+ const_operator- (ship : const_Ship&amp;) : Squadron</text>
+<text x="378" y="418" style="font:12px Ubuntu">+ const_operator[] (index : unsigned) : const_Ship&amp;</text>
+<text x="378" y="432" style="font:12px Ubuntu">+ const_getSize () : size_t</text>
+<text x="378" y="446" style="font:12px Ubuntu">+ const_getMaximumSpeed () : unsigned</text>
+<text x="378" y="460" style="font:12px Ubuntu">+ const_getTotalWeight () : double</text>
+<text x="378" y="474" style="font:12px Ubuntu">+ const_getConsumption (distance : unsigned, speed : unsigend) : double</text>
+<text x="378" y="488" style="font:12px Ubuntu">- const_getMember (ship : const_Ship*) : Member*</text>
+<text x="378" y="502" style="font:12px Ubuntu">- const_getMember (index : unsigned) : Member*</text>
+<text x="378" y="516" style="font:12px Ubuntu">- const_isEmpty () : bool</text>
+<text x="378" y="530" style="font:12px Ubuntu">- emptySquad (squadron : const_Squadron&amp;) : void</text>
+<text x="378" y="544" style="font:12px Ubuntu">- copySquad () : void</text>
+<rect x="1120" y="50" width="410" height="223" style="fill:rgb(255,247,225);stroke:none" />
+<rect x="1120" y="50" width="410" height="223" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="1312" y="73" style="font:12px Ubuntu">Ship</text>
+<line x1="1120" y1="85" x2="1530" y2="85" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="1128" y="100" style="font:12px Ubuntu">- nickname : string</text>
+<text x="1128" y="114" style="font:12px Ubuntu">- serialNumber : unsigned</text>
+<line x1="1120" y1="123" x2="1530" y2="123" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="1128" y="138" style="font:12px Ubuntu"># explicit_Ship ()</text>
+<text x="1128" y="152" style="font:12px Ubuntu">+ setNickname (newNickname : const_string) : void</text>
+<text x="1128" y="166" style="font:12px Ubuntu">+ const_getNickname () : string</text>
+<text x="1128" y="180" style="font:12px Ubuntu">+ const_getConsumption (distance : unsigned, speed : unsigned) : d...</text>
+<text x="1128" y="194" style="font:12px Ubuntu">+ const_getModel () : string</text>
+<text x="1128" y="208" style="font:12px Ubuntu">+ const_getModelSpeedMax () : unsigned</text>
+<text x="1128" y="222" style="font:12px Ubuntu">+ const_getModelWeight () : double</text>
+<text x="1128" y="236" style="font:12px Ubuntu">+ getNextSerialNumber () : unsigned</text>
+<text x="1128" y="250" style="font:12px Ubuntu">+ friend_operator&lt;&lt; (out : ostream&amp;, ship : const_Ship&amp;) : ostream&amp;</text>
+<text x="1128" y="264" style="font:12px Ubuntu">+ const_toStream (out : ostream&amp;) : ostream&amp;</text>
+<rect x="890" y="340" width="390" height="125" style="fill:rgb(255,247,225);stroke:none" />
+<rect x="890" y="340" width="390" height="125" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="1054" y="363" style="font:12px Ubuntu">CargoShip</text>
+<line x1="890" y1="375" x2="1280" y2="375" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="898" y="390" style="font:12px Ubuntu"># currentCapacity : double</text>
+<line x1="890" y1="399" x2="1280" y2="399" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="898" y="414" style="font:12px Ubuntu"># CargoShip (serialNumber : unsigned_int, currentCapacity : dou...</text>
+<text x="898" y="428" style="font:12px Ubuntu">+ const_getMaxCapacity () : double</text>
+<text x="898" y="442" style="font:12px Ubuntu">+ const_getCurrentCapacity () : double</text>
+<text x="898" y="456" style="font:12px Ubuntu">+ const_toStream (out : ostream&amp;) : ostream&amp;</text>
+<rect x="1300" y="340" width="240" height="139" style="fill:rgb(255,247,225);stroke:none" />
+<rect x="1300" y="340" width="240" height="139" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="1403" y="363" style="font:12px Ubuntu">TieLn</text>
+<line x1="1300" y1="375" x2="1540" y2="375" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="1308" y="390" style="font:12px Ubuntu">- serialNumberCounter : unsigned</text>
+<line x1="1300" y1="399" x2="1540" y2="399" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="1308" y="414" style="font:12px Ubuntu">+ TieLn ()</text>
+<text x="1308" y="428" style="font:12px Ubuntu">+ const_getModel () : string</text>
+<text x="1308" y="442" style="font:12px Ubuntu">+ const_getModelSpeedMax () : unsig...</text>
+<text x="1308" y="456" style="font:12px Ubuntu">+ const_getModelWeight () : double</text>
+<text x="1308" y="470" style="font:12px Ubuntu">- getNextSerialNumber () : unsigned</text>
+<rect x="840" y="530" width="240" height="153" style="fill:rgb(255,247,225);stroke:none" />
+<rect x="840" y="530" width="240" height="153" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="938" y="553" style="font:12px Ubuntu">Shuttle</text>
+<line x1="840" y1="565" x2="1080" y2="565" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="848" y="580" style="font:12px Ubuntu">- serialNumberCounter : unsigned</text>
+<line x1="840" y1="589" x2="1080" y2="589" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="848" y="604" style="font:12px Ubuntu">+ Shuttle ()</text>
+<text x="848" y="618" style="font:12px Ubuntu">+ const_getMaxCapacity () : double</text>
+<text x="848" y="632" style="font:12px Ubuntu">+ const_getModelWeight () : double</text>
+<text x="848" y="646" style="font:12px Ubuntu">+ const_getModel () : string</text>
+<text x="848" y="660" style="font:12px Ubuntu">+ const_getModelSpeedMax () : unsig...</text>
+<text x="848" y="674" style="font:12px Ubuntu">- getNextSerialNumber () : void</text>
+<rect x="1560" y="340" width="240" height="139" style="fill:rgb(255,247,225);stroke:none" />
+<rect x="1560" y="340" width="240" height="139" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="1665" y="363" style="font:12px Ubuntu">TieIn</text>
+<line x1="1560" y1="375" x2="1800" y2="375" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="1568" y="390" style="font:12px Ubuntu">- serialNumberCounter : unsigned</text>
+<line x1="1560" y1="399" x2="1800" y2="399" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="1568" y="414" style="font:12px Ubuntu">+ TieIn ()</text>
+<text x="1568" y="428" style="font:12px Ubuntu">+ const_getModel () : string</text>
+<text x="1568" y="442" style="font:12px Ubuntu">+ const_getModelSpeedMax () : unsig...</text>
+<text x="1568" y="456" style="font:12px Ubuntu">+ const_getModelWeight () : double</text>
+<text x="1568" y="470" style="font:12px Ubuntu">- getNextSerialNumber () : unsigned</text>
+<rect x="1100" y="530" width="240" height="153" style="fill:rgb(255,247,225);stroke:none" />
+<rect x="1100" y="530" width="240" height="153" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="1190" y="553" style="font:12px Ubuntu">Destroyer</text>
+<line x1="1100" y1="565" x2="1340" y2="565" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="1108" y="580" style="font:12px Ubuntu">- serialNumberCounter : unsigned</text>
+<line x1="1100" y1="589" x2="1340" y2="589" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="1108" y="604" style="font:12px Ubuntu">+ Destroyer (currentCapacity : double)</text>
+<text x="1108" y="618" style="font:12px Ubuntu">+ const_getMaxCapacity () : double</text>
+<text x="1108" y="632" style="font:12px Ubuntu">+ const_getModelWeight () : double</text>
+<text x="1108" y="646" style="font:12px Ubuntu">+ const_getModel () : string</text>
+<text x="1108" y="660" style="font:12px Ubuntu">+ const_getModelSpeedMax () : unsig...</text>
+<text x="1108" y="674" style="font:12px Ubuntu">- getNextSerialNumber () : void</text>
+<polygon points="900,190 1035,190 1050,205 1050,250 900,250" style="fill:rgb(255,247,225);stroke:none" />
+<polygon points="900,190 1035,190 1050,205 1050,250 900,250" style="fill:none;stroke:rgb(64,64,64);stroke-width:1.2;stroke-linecap:square" />
+<line x1="1035" y1="190" x2="1035" y2="205" style="fill:none;stroke:rgb(64,64,64);stroke-width:1.2;stroke-linecap:square" />
+<line x1="1035" y1="205" x2="1050" y2="205" style="fill:none;stroke:rgb(64,64,64);stroke-width:1.2;stroke-linecap:square" />
+<text x="905" y="210" style="font:12px Ubuntu">A </text>
+<text x="915" y="210" style="font:12px Ubuntu">ship </text>
+<text x="941" y="210" style="font:12px Ubuntu">can </text>
+<text x="964" y="210" style="font:12px Ubuntu">only </text>
+<text x="989" y="210" style="font:12px Ubuntu">be </text>
+<text x="1006" y="210" style="font:12px Ubuntu">the </text>
+<text x="905" y="225" style="font:12px Ubuntu">leader </text>
+<text x="943" y="225" style="font:12px Ubuntu">of </text>
+<text x="958" y="225" style="font:12px Ubuntu">a </text>
+<text x="967" y="225" style="font:12px Ubuntu">squadron </text>
+<text x="905" y="240" style="font:12px Ubuntu">he's </text>
+<text x="931" y="240" style="font:12px Ubuntu">part </text>
+<text x="958" y="240" style="font:12px Ubuntu">of </text>
+<text x="922" y="91" style="font:14px Ubuntu">composed of &gt;</text>
+<text x="815" y="62" style="font:14px Ubuntu">0..*</text>
+<text x="1094" y="62" style="font:14px Ubuntu">0..*</text>
+<text x="929" y="140" style="font:14px Ubuntu">&lt; Leader of</text>
+<text x="815" y="142" style="font:14px Ubuntu">0..*</text>
+<text x="1092" y="142" style="font:14px Ubuntu">0..1</text>
+<path d="M10,8 L10,38 L75,38 Q105,38 105,8 L10,8" style="fill:rgb(255,247,225);stroke:none" />
+<path d="M10,8 L10,38 L75,38 Q105,38 105,8 L10,8" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="15" y="30" style="font:16px Ubuntu">Squadron</text>
+<rect x="10" y="8" width="1809" height="701" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
+</svg>

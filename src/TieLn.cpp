@@ -20,7 +20,3 @@ std::string TieLn::getModel() const {
 
 TieLn::TieLn() : Ship(getNextSerialNumber()) {}
 
-TieLn::~TieLn() {
-
-}
-
