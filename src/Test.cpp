@@ -54,6 +54,12 @@ int main(){
 
    std::cout << blackSquad << std::endl;
 
+   std::cout << "Consumption of Black Squad for a distance of 1000 and speed at 30 MGLT : "
+      << blackSquad.getConsumption(1000,30) << std::endl;
+   //std::cout << blackSquad.getConsumption(1000,300) << std::endl;
+
+   std::cout << std::endl;
+
    //constructor by copy, remove ship from squad and remove leader
    Squadron blackSquad2(blackSquad);
 
