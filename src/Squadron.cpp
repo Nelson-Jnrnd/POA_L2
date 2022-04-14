@@ -32,10 +32,7 @@ Squadron &Squadron::operator=(const Squadron &squadron) {
    return *this;
 }
 
-void Squadron::setLeader(const Ship *ship) {
-    if (ship == nullptr) {
-        throw std::invalid_argument("Ship cannot be nullptr");
-    }
+void Squadron::setLeader(const Ship& ship) {
     Member *member = getMember(ship);
     if (member == nullptr) {
         throw std::invalid_argument("Ship is not in the squadron");
@@ -47,16 +44,13 @@ bool Squadron::isEmpty() const {
     return firstMember == nullptr;
 }
 
-Squadron::Member* Squadron::getMember(const Ship *ship) const{
-    if(ship == nullptr) {
-        throw std::invalid_argument("Ship cannot be nullptr");
-    }
+Squadron::Member* Squadron::getMember(const Ship &ship) const{
     if(isEmpty()) {
         return nullptr;
     }
     Member *currentMember = firstMember;
     while (currentMember != nullptr) {
-        if (currentMember->getShip() == ship) {
+        if (&currentMember->getShip() == &ship) {
             return currentMember;
         }
         currentMember = currentMember->getNext();
@@ -77,39 +71,33 @@ Squadron::Member* Squadron::getMember(unsigned index) const{
    return m;
 }
 
-void Squadron::addShipToSelf(const Ship *ship) {
-    if(ship == nullptr) {
-        throw std::invalid_argument("Ship cannot be nullptr");
-    }
+void Squadron::addShipToSelf(const Ship &ship) {
     if(isEmpty()) {
-        firstMember = new Member(ship);
+        firstMember = new Member(&ship);
     } else if(getMember(ship) != nullptr){
         throw std::invalid_argument("Ship is already in squadron");
     }
     else {
         Member* oldFirstMember = firstMember;
-        firstMember = new Member(ship);
+        firstMember = new Member(&ship);
         firstMember->setNext(oldFirstMember);
     }
 }
 
-Squadron Squadron::addShip(const Ship *ship) const{
+Squadron Squadron::addShip(const Ship& ship) const{
     Squadron newSquadron(*this);
     newSquadron.addShipToSelf(ship);
     return newSquadron;
 }
 
-void Squadron::removeShipToSelf(const Ship *ship) {
-    if(ship == nullptr) {
-        throw std::invalid_argument("Ship cannot be nullptr");
-    }
+void Squadron::removeShipToSelf(const Ship &ship) {
     if(isEmpty()) {
         throw std::invalid_argument("Squadron is empty");
     }
     Member *currentMember = firstMember;
     Member *previousMember = nullptr;
     while (currentMember != nullptr) {
-        if (currentMember->getShip() == ship) {
+        if (&currentMember->getShip() == &ship) {
             if (previousMember == nullptr) {
                 firstMember = currentMember->getNext();
             } else {
@@ -127,7 +115,7 @@ void Squadron::removeShipToSelf(const Ship *ship) {
     throw std::invalid_argument("Ship is not in the squadron");
 }
 
-Squadron Squadron::removeShip(const Ship *ship) const{
+Squadron Squadron::removeShip(const Ship &ship) const{
     Squadron newSquadron(*this);
     newSquadron.removeShipToSelf(ship);
     return newSquadron;
@@ -137,11 +125,11 @@ unsigned int Squadron::getMaximumSpeed() const {
    if(isEmpty())
       return 0;
 
-    unsigned int maxSpeed = firstMember->getShip()->getModelSpeedMax();
+    unsigned int maxSpeed = firstMember->getShip().getModelSpeedMax();
     Member *currentMember = firstMember->getNext();
     while (currentMember != nullptr) {
-        if (currentMember->getShip()->getModelSpeedMax() < maxSpeed) {
-            maxSpeed = currentMember->getShip()->getModelSpeedMax();
+        if (currentMember->getShip().getModelSpeedMax() < maxSpeed) {
+            maxSpeed = currentMember->getShip().getModelSpeedMax();
         }
         currentMember = currentMember->getNext();
     }
@@ -155,7 +143,7 @@ double Squadron::getTotalWeight() const {
     double totalWeight = 0;
     Member *currentMember = firstMember;
     while (currentMember != nullptr) {
-        totalWeight += currentMember->getShip()->getModelWeight();
+        totalWeight += currentMember->getShip().getModelWeight();
         currentMember = currentMember->getNext();
     }
     return totalWeight;
@@ -171,7 +159,7 @@ double Squadron::getConsumption(unsigned distance, unsigned speed) const {
     double consumption = 0;
     Member *currentMember = firstMember;
     while (currentMember != nullptr) {
-        consumption += currentMember->getShip()->getConsumption(distance, speed);
+        consumption += currentMember->getShip().getConsumption(distance, speed);
         currentMember = currentMember->getNext();
     }
     return consumption;
@@ -192,7 +180,7 @@ std::ostream& Squadron::toStream(std::ostream &out) const {
       Squadron::Member *currentMember = firstMember;
       while (currentMember != nullptr) {
          if (currentMember != leader) {
-            out << "\n" << *currentMember->getShip() << "\n";
+            out << "\n" << currentMember->getShip() << "\n";
          }
          currentMember = currentMember->getNext();
       }
@@ -204,12 +192,12 @@ std::ostream& Squadron::toStream(std::ostream &out) const {
 }
 
 Squadron& Squadron::operator+= (const Ship& ship) {
-    addShipToSelf(&ship);
+    addShipToSelf(ship);
     return *this;
 }
 
 Squadron& Squadron::operator-= (const Ship &ship) {
-    removeShipToSelf(&ship);
+    removeShipToSelf(ship);
     return *this;
 }
 
@@ -221,8 +209,8 @@ Squadron::Member* Squadron::Member::getNext() const{
     return next;
 }
 
-const Ship* Squadron::Member::getShip() const{
-    return ship;
+const Ship& Squadron::Member::getShip() const{
+    return *ship;
 }
 
 void Squadron::Member::setNext(Squadron::Member *next) {
@@ -239,22 +227,22 @@ std::ostream& operator<<(std::ostream& out, const Squadron& squadron) {
 }
 
 Squadron Squadron::operator+(Ship &ship) const{
-   return addShip(&ship);
+   return addShip(ship);
 }
 
 Squadron Squadron::operator-(const Ship &ship) const{
-   return removeShip(&ship);
+   return removeShip(ship);
 }
 
 const Ship &Squadron::operator[](const int index) const{
-    return *getMember(index)->getShip();
+    return getMember(index)->getShip();
 }
 
 const Ship *Squadron::getLeader() const {
    if(this->leader == nullptr)
       return nullptr;
 
-   return this->leader->getShip();
+   return &this->leader->getShip();
 }
 
 void Squadron::removeLeader() {

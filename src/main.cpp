@@ -8,27 +8,15 @@ int main() {
     blackLeader.setNickname("Black leader");
     TieLn blackTwo;
     Shuttle shuttle(23.4);
-    Shuttle shut(10);
 
     Squadron squad("Black Squadron");
     squad += blackLeader;
     squad += blackTwo;
     squad += shuttle;
 
-    squad.setLeader(&blackLeader);
+    squad.setLeader(blackLeader);
 
     std::cout << squad;
 
-    squad -= shuttle;
-
-    std::cout << squad;
-
-    std::cout << squad.getSize() << std::endl;
-
-    Squadron t(squad + shuttle);
-
-    std::cout << t[2];
-
-    std::cout << t;
     return 0;
 }

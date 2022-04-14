@@ -62,7 +62,7 @@ int main(){
    //blackSquad += blackThree;
    //blackSquad + blackThree;
 
-   blackSquad.setLeader(&blackLeader);
+   blackSquad.setLeader(blackLeader);
 
    std::cout << blackSquad << std::endl;
 
@@ -95,7 +95,7 @@ int main(){
    //blackSquad2.setLeader(&blackLeader2);
 
    blackSquad2 += blackLeader2;
-   blackSquad2.setLeader(&blackLeader2);
+   blackSquad2.setLeader(blackLeader2);
 
    std::cout << blackSquad2 << std::endl;
 
@@ -116,7 +116,7 @@ int main(){
 
    blueSquad += blueOne;
 
-   blueSquad.setLeader(&blueLeader);
+   blueSquad.setLeader(blueLeader);
    std::cout << blueSquad << std::endl;
 
    blueSquad -= blueLeader;

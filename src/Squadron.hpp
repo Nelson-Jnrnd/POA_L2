@@ -35,7 +35,7 @@ class Squadron {
       * Get the ship of the member
       * @return the ship of the member
       */
-     const Ship* getShip() const;
+     const Ship& getShip() const;
      /**
       * Get the next member of the squadron
       * @return the next member of the squadron
@@ -68,7 +68,7 @@ class Squadron {
    * @param parameter-ship the ship to search
    * @return the member of the squadron that has the ship passed as parameter.
    */
-   Member* getMember(const Ship* ship) const;
+   Member* getMember(const Ship& ship) const;
    /**
    * Get the member of the squadron at the given index
    *
@@ -126,7 +126,7 @@ public:
    * Set leader of the squadron
    * @param ship the ship to set as leader
    */
-   void setLeader(const Ship* ship);
+   void setLeader(const Ship& ship);
    /**
    * Remove leader of the squadron
    */
@@ -156,24 +156,24 @@ public:
    * Adds a ship to the squadron
    * @param ship the ship to add
    */
-   void addShipToSelf(const Ship* ship);
+   void addShipToSelf(const Ship& ship);
    /**
    * Adds a ship to a copy of the squadron
    * @param ship the ship to add
    * @return the copy of the squadron with the ship added
    */
-   Squadron addShip(const Ship* ship) const;
+   Squadron addShip(const Ship& ship) const;
    /**
    * Removes a ship from the squadron
    * @param ship the ship to remove
    */
-   void removeShipToSelf(const Ship* ship);
+   void removeShipToSelf(const Ship& ship);
    /**
    * Removes a ship from a copy of the squadron
    * @param ship the ship to remove
    * @return the copy of the squadron with the ship removed
    */
-   Squadron removeShip(const Ship* ship) const;
+   Squadron removeShip(const Ship& ship) const;
    /**
    * Adds a ship to the squadron
    * @param ship the ship to add
