@@ -150,5 +150,9 @@ int main(){
    const Squadron copyConstant2(blueSquad);
    Squadron copyConstant3(constantSquad);
 
-    return 0;
+   const Squadron constantSquad2 = constantSquad;
+   const Squadron constantSquad3(constantSquad + blackThree);
+   const Squadron constantSquad4(blueSquad + blackTwo);
+
+   return 0;
 }
