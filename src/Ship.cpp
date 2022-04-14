@@ -1,4 +1,4 @@
-#include "Ship.hpp"
+#include "Headers/Ship.hpp"
 #include <cmath>
 #include <iomanip>
 
@@ -31,4 +31,8 @@ std::ostream& operator<<(std::ostream& out, const Ship& ship) {
 
 std::string Ship::getNickname() const {
    return this->nickname;
+}
+
+Ship::~Ship() {
+
 }

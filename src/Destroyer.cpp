@@ -1,8 +1,4 @@
-//
-// Created by NelsonWork on 31.03.2022.
-//
-
-#include "Destroyer.hpp"
+#include "Headers/Destroyer.hpp"
 #include <cmath>
 
 unsigned int Destroyer::serialNumberCounter = 0;
@@ -10,9 +6,9 @@ unsigned int Destroyer::serialNumberCounter = 0;
 unsigned int Destroyer::getNextSerialNumber() {
     return ++serialNumberCounter;
 }
-// TODO est-ce que c'est possible de facto ?
+
 Destroyer::Destroyer(double currentCapacity) : CargoShip(getNextSerialNumber(), currentCapacity) {
-    if(currentCapacity < 0 || currentCapacity > getMaxCapacity()) {
+    if(currentCapacity < 0 || currentCapacity > this->getMaxCapacity()) {
      throw std::invalid_argument("Capacity must be greater than 0 and less than or equal to max capacity");
     }
 }
@@ -31,8 +27,4 @@ std::string Destroyer::getModel() const {
 
 unsigned int Destroyer::getModelSpeedMax() const {
     return 40;
-}
-
-Destroyer::~Destroyer() {
-
 }

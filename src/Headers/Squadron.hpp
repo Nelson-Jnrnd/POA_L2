@@ -74,6 +74,7 @@ class Squadron {
    *
    * @param index the index of the member to get
    * @return Member* the member of the squadron at the given index
+   * @throw invalid_argument exception
    */
    Member* getMember(unsigned index) const;
    /**
@@ -125,6 +126,7 @@ public:
    /**
    * Set leader of the squadron
    * @param ship the ship to set as leader
+   * @throw invalid_argument exception
    */
    void setLeader(const Ship& ship);
    /**
@@ -155,6 +157,7 @@ public:
    /**
    * Adds a ship to the squadron
    * @param ship the ship to add
+   * @throw invalid_argument exception
    */
    void addShipToSelf(const Ship& ship);
    /**
@@ -166,6 +169,7 @@ public:
    /**
    * Removes a ship from the squadron
    * @param ship the ship to remove
+   * @throw invalid_argument exception
    */
    void removeShipToSelf(const Ship& ship);
    /**
@@ -228,6 +232,7 @@ public:
    * @param distance distance in mio kilometers
    * @param speed speed in MGHT
    * @return the consumption of the squadron in tons
+   * @throw invalid_argument exception
    */
    double getConsumption(unsigned distance, unsigned speed) const;
 };

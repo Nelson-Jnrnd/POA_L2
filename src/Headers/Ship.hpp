@@ -1,7 +1,3 @@
-//
-// Created by NelsonWork on 18.03.2022.
-//
-
 #ifndef POA_L2_SHIP_H
 #define POA_L2_SHIP_H
 
@@ -32,6 +28,7 @@ protected:
     explicit Ship(unsigned int serialNumber);
 
 public:
+    virtual ~Ship();
     friend std::ostream& operator<<(std::ostream& out, const Ship& ship);
     virtual std::ostream& toStream(std::ostream& out) const;
     /**

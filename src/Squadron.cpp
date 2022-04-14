@@ -1,8 +1,4 @@
-//
-// Created by NelsonWork on 18.03.2022.
-//
-
-#include "Squadron.hpp"
+#include "Headers/Squadron.hpp"
 
 #include <utility>
 

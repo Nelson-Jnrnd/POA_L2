@@ -1,8 +1,4 @@
-//
-// Created by NelsonWork on 31.03.2022.
-//
-
-#include "CargoShip.hpp"
+#include "Headers/CargoShip.hpp"
 #include <iomanip>
 
 CargoShip::CargoShip(unsigned int serialNumber, double currentCapacity) : currentCapacity(currentCapacity), Ship(serialNumber) {}
@@ -16,8 +12,4 @@ std::ostream& CargoShip::toStream(std::ostream &out) const {
     out << std::fixed << std::setprecision(1) << "cargo : " << currentCapacity << " tons (max : "
     << getMaxCapacity() << ")\n";
     return out;
-}
-
-CargoShip::~CargoShip() {
-
 }

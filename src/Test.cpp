@@ -1,9 +1,9 @@
 #include <iostream>
-#include "Squadron.hpp"
-#include "TieLn.hpp"
-#include "Shuttle.hpp"
-#include "TieIn.hpp"
-#include "Destroyer.hpp"
+#include "Headers/Squadron.hpp"
+#include "Headers/TieLn.hpp"
+#include "Headers/Shuttle.hpp"
+#include "Headers/TieIn.hpp"
+#include "Headers/Destroyer.hpp"
 
 int main(){
 

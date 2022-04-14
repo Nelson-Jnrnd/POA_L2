@@ -1,10 +1,5 @@
-//
-// Created by NelsonWork on 31.03.2022.
-//
-
 #ifndef POA_L2_CARGOSHIP_HPP
 #define POA_L2_CARGOSHIP_HPP
-
 
 #include "Ship.hpp"
 
@@ -26,7 +21,6 @@ class CargoShip : public Ship {
      */
     CargoShip(unsigned int serialNumber, double currentCapacity);
     public:
-    ~CargoShip();
     /** 
      * Get max capacity of the ship in tons
      * @return max capacity of the ship in tons
