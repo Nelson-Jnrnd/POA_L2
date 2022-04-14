@@ -1,7 +1,3 @@
-//
-// Created by NelsonWork on 31.03.2022.
-//
-
 #ifndef POA_L2_DESTROYER_HPP
 #define POA_L2_DESTROYER_HPP
 
@@ -22,8 +18,9 @@ public:
     /**
      * Construct a new Destroyer ship object
      * @param currentCapacity - current capacity of the ship in tons
+     * @throw invalid_argument exception
      */
-    Destroyer(double currentCapacity);
+    explicit Destroyer(double currentCapacity);
 
     /**
      * Get max capacity of the ship in tons

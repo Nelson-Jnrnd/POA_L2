@@ -1,8 +1,4 @@
-//
-// Created by NelsonWork on 31.03.2022.
-//
-
-#include "Shuttle.hpp"
+#include "Headers/Shuttle.hpp"
 
 unsigned int Shuttle::serialNumberCounter = 0;
 

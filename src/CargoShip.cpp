@@ -1,8 +1,4 @@
-//
-// Created by NelsonWork on 31.03.2022.
-//
-
-#include "CargoShip.hpp"
+#include "Headers/CargoShip.hpp"
 #include <iomanip>
 
 CargoShip::CargoShip(unsigned int serialNumber, double currentCapacity) : currentCapacity(currentCapacity), Ship(serialNumber) {}

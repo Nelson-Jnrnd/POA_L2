@@ -1,10 +1,5 @@
-//
-// Created by NelsonWork on 31.03.2022.
-//
-
 #ifndef POA_L2_CARGOSHIP_HPP
 #define POA_L2_CARGOSHIP_HPP
-
 
 #include "Ship.hpp"
 
