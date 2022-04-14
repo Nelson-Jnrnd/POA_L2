@@ -234,7 +234,7 @@ Squadron Squadron::operator-(const Ship &ship) const{
    return removeShip(ship);
 }
 
-const Ship &Squadron::operator[](const int index) const{
+const Ship &Squadron::operator[](unsigned index) const{
     return getMember(index)->getShip();
 }
 
