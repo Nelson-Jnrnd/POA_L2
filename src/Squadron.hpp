@@ -203,7 +203,7 @@ public:
    * @param index the index of the member to get
    * @return Member* the member of the squadron at the given index
    */
-   const Ship& operator[](int index) const;
+   const Ship& operator[](unsigned index) const;
 
    /**
    * Get the size of the squadron

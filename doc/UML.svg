@@ -38,7 +38,7 @@ text { font:12px Dialog; }
 <line x1="1090" y1="510" x2="1090" y2="470" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
 <polygon points="1090,470 1098,490 1082,490" style="fill:rgb(255,255,255);stroke:none" />
 <polygon points="1090,470 1098,490 1082,490" style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square" />
-<line x1="970" y1="190" x2="972" y2="150" style="fill:none;stroke:rgb(64,64,64);stroke-dasharray:4;stroke-dashoffset:0" />
+<line x1="970" y1="190" x2="974" y2="150" style="fill:none;stroke:rgb(64,64,64);stroke-dasharray:4;stroke-dashoffset:0" />
 <rect x="30" y="50" width="270" height="154" style="fill:rgb(255,247,225);stroke:none" />
 <rect x="30" y="50" width="270" height="154" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
 <text x="140" y="73" style="font:12px Ubuntu">Member</text>
@@ -62,23 +62,23 @@ text { font:12px Dialog; }
 <text x="378" y="152" style="font:12px Ubuntu">+ explicit_Squadron (name : string)</text>
 <text x="378" y="166" style="font:12px Ubuntu">+ Squadron (squadron : const_Squadron&amp;)</text>
 <text x="378" y="180" style="font:12px Ubuntu">+ ~Squadron ()</text>
-<text x="378" y="194" style="font:12px Ubuntu">+ setLeader (ship : const_Ship*) : void</text>
+<text x="378" y="194" style="font:12px Ubuntu">+ setLeader (ship : const_Ship&amp;) : void</text>
 <text x="378" y="208" style="font:12px Ubuntu">+ removeLeader () : void</text>
 <text x="378" y="222" style="font:12px Ubuntu">+ const_getLeader () : const_Ship*</text>
 <text x="378" y="236" style="font:12px Ubuntu">+ setName (name : string) : void</text>
 <text x="378" y="250" style="font:12px Ubuntu">+ const_getName () : string</text>
 <text x="378" y="264" style="font:12px Ubuntu">+ friend_operator&lt;&lt; (out : ostream&amp;, squadron : const_Squadron&amp;) : ostre...</text>
 <text x="378" y="278" style="font:12px Ubuntu">+ const_toStream (out : ostream&amp;) : ostream&amp;</text>
-<text x="378" y="292" style="font:12px Ubuntu">+ const_addShip (ship : const_Ship*) : Squadron</text>
-<text x="378" y="306" style="font:12px Ubuntu">+ addShipToSelf (ship : const_Ship*) : void</text>
-<text x="378" y="320" style="font:12px Ubuntu">+ const_removeShip (ship : const_Ship*) : Squadron</text>
-<text x="378" y="334" style="font:12px Ubuntu">+ removeShipToSelf (ship : const_Ship*) : void</text>
+<text x="378" y="292" style="font:12px Ubuntu">+ const_addShip (ship : const_Ship&amp;) : Squadron</text>
+<text x="378" y="306" style="font:12px Ubuntu">+ addShipToSelf (ship : const_Ship&amp;) : void</text>
+<text x="378" y="320" style="font:12px Ubuntu">+ const_removeShip (ship : const_Ship&amp;) : Squadron</text>
+<text x="378" y="334" style="font:12px Ubuntu">+ removeShipToSelf (ship : const_Ship&amp;) : void</text>
 <text x="378" y="348" style="font:12px Ubuntu">+ operator= (squadron : const_Squadron&amp;) : Squadron&amp;</text>
 <text x="378" y="362" style="font:12px Ubuntu">+ operator+= (ship : const_Ship&amp;) : Squadron&amp;</text>
 <text x="378" y="376" style="font:12px Ubuntu">+ operator-= (ship : const_Ship&amp;) : Squadron&amp;</text>
 <text x="378" y="390" style="font:12px Ubuntu">+ const_operator+ (ship : const_Ship&amp;) : Squadron</text>
 <text x="378" y="404" style="font:12px Ubuntu">+ const_operator- (ship : const_Ship&amp;) : Squadron</text>
-<text x="378" y="418" style="font:12px Ubuntu">+ const_operator[] (index : int) : const_Ship&amp;</text>
+<text x="378" y="418" style="font:12px Ubuntu">+ const_operator[] (index : unsigned) : const_Ship&amp;</text>
 <text x="378" y="432" style="font:12px Ubuntu">+ const_getSize () : size_t</text>
 <text x="378" y="446" style="font:12px Ubuntu">+ const_getMaximumSpeed () : unsigned</text>
 <text x="378" y="460" style="font:12px Ubuntu">+ const_getTotalWeight () : double</text>
@@ -88,22 +88,22 @@ text { font:12px Dialog; }
 <text x="378" y="516" style="font:12px Ubuntu">- const_isEmpty () : bool</text>
 <text x="378" y="530" style="font:12px Ubuntu">- emptySquad (squadron : const_Squadron&amp;) : void</text>
 <text x="378" y="544" style="font:12px Ubuntu">- copySquad () : void</text>
-<rect x="1120" y="50" width="380" height="223" style="fill:rgb(255,247,225);stroke:none" />
-<rect x="1120" y="50" width="380" height="223" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
-<text x="1297" y="73" style="font:12px Ubuntu">Ship</text>
-<line x1="1120" y1="85" x2="1500" y2="85" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<rect x="1120" y="50" width="410" height="223" style="fill:rgb(255,247,225);stroke:none" />
+<rect x="1120" y="50" width="410" height="223" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<text x="1312" y="73" style="font:12px Ubuntu">Ship</text>
+<line x1="1120" y1="85" x2="1530" y2="85" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
 <text x="1128" y="100" style="font:12px Ubuntu">- nickname : string</text>
 <text x="1128" y="114" style="font:12px Ubuntu">- serialNumber : unsigned</text>
-<line x1="1120" y1="123" x2="1500" y2="123" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
+<line x1="1120" y1="123" x2="1530" y2="123" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
 <text x="1128" y="138" style="font:12px Ubuntu"># explicit_Ship ()</text>
 <text x="1128" y="152" style="font:12px Ubuntu">+ setNickname (newNickname : const_string) : void</text>
 <text x="1128" y="166" style="font:12px Ubuntu">+ const_getNickname () : string</text>
-<text x="1128" y="180" style="font:12px Ubuntu">+ const_getConsumption (distance : unsigned, speed : unsigne...</text>
+<text x="1128" y="180" style="font:12px Ubuntu">+ const_getConsumption (distance : unsigned, speed : unsigned) : d...</text>
 <text x="1128" y="194" style="font:12px Ubuntu">+ const_getModel () : string</text>
 <text x="1128" y="208" style="font:12px Ubuntu">+ const_getModelSpeedMax () : unsigned</text>
 <text x="1128" y="222" style="font:12px Ubuntu">+ const_getModelWeight () : double</text>
 <text x="1128" y="236" style="font:12px Ubuntu">+ getNextSerialNumber () : unsigned</text>
-<text x="1128" y="250" style="font:12px Ubuntu">+ friend_operator&lt;&lt; (out : ostream&amp;, ship : const_Ship&amp;) : ostr...</text>
+<text x="1128" y="250" style="font:12px Ubuntu">+ friend_operator&lt;&lt; (out : ostream&amp;, ship : const_Ship&amp;) : ostream&amp;</text>
 <text x="1128" y="264" style="font:12px Ubuntu">+ const_toStream (out : ostream&amp;) : ostream&amp;</text>
 <rect x="890" y="340" width="390" height="125" style="fill:rgb(255,247,225);stroke:none" />
 <rect x="890" y="340" width="390" height="125" style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square" />
