@@ -12,7 +12,7 @@ int main(){
     */
 
    TieLn blackLeader;
-   TieIn blackOne;
+   const TieIn blackOne;
    Destroyer blackTwo(320.6);
    Shuttle blackThree(23.4);
    //Shuttle overWeight(90.4);
@@ -145,6 +145,10 @@ int main(){
     std::cout << "Consumption of blacksquad for a distance of 1000 and speed at 500 MGLT : "
               << blackSquad.getConsumption(1000,500) << std::endl;
 */
+   const Squadron constantSquad("constant");
+   const Squadron copyConstant(constantSquad);
+   const Squadron copyConstant2(blueSquad);
+   Squadron copyConstant3(constantSquad);
 
     return 0;
 }

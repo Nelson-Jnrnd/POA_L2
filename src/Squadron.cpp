@@ -77,7 +77,7 @@ Squadron::Member* Squadron::getMember(unsigned index) const{
    return m;
 }
 
-void Squadron::addShipToSelf(Ship *ship) {
+void Squadron::addShipToSelf(const Ship *ship) {
     if(ship == nullptr) {
         throw std::invalid_argument("Ship cannot be nullptr");
     }
@@ -93,7 +93,7 @@ void Squadron::addShipToSelf(Ship *ship) {
     }
 }
 
-Squadron Squadron::addShip(Ship *ship) const{
+Squadron Squadron::addShip(const Ship *ship) const{
     Squadron newSquadron(*this);
     newSquadron.addShipToSelf(ship);
     return newSquadron;
@@ -203,7 +203,7 @@ std::ostream& Squadron::toStream(std::ostream &out) const {
    return out;
 }
 
-Squadron& Squadron::operator+= (Ship& ship) {
+Squadron& Squadron::operator+= (const Ship& ship) {
     addShipToSelf(&ship);
     return *this;
 }
@@ -215,13 +215,13 @@ Squadron& Squadron::operator-= (const Ship &ship) {
 
 /// Member
 
-Squadron::Member::Member(Ship *ship) : ship(ship), next(nullptr) {}
+Squadron::Member::Member(const Ship *ship) : ship(ship), next(nullptr) {}
 
-Squadron::Member* Squadron::Member::getNext() {
+Squadron::Member* Squadron::Member::getNext() const{
     return next;
 }
 
-Ship* Squadron::Member::getShip() {
+const Ship* Squadron::Member::getShip() const{
     return ship;
 }
 
@@ -229,7 +229,7 @@ void Squadron::Member::setNext(Squadron::Member *next) {
     this->next = next;
 }
 
-bool Squadron::Member::hasNext() {
+bool Squadron::Member::hasNext() const{
     return next != nullptr;
 }
 

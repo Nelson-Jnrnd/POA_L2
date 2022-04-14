@@ -20,7 +20,7 @@ class Squadron {
      /**
       * Pointer to the ship of the member
       */
-     Ship* ship;
+     const Ship* ship;
      /**
       * Pointer to the next member of the squadron
       */
@@ -30,17 +30,17 @@ class Squadron {
       * Construct a new Member object
       * @param ship the ship of the member
       */
-     explicit Member(Ship* ship);
+     explicit Member(const Ship* ship);
      /**
       * Get the ship of the member
       * @return the ship of the member
       */
-     Ship* getShip();
+     const Ship* getShip() const;
      /**
       * Get the next member of the squadron
       * @return the next member of the squadron
       */
-     Member* getNext();
+     Member* getNext() const;
      /**
       * Set the next member of the squadron
       * @param next the next member of the squadron
@@ -51,7 +51,7 @@ class Squadron {
       * Checks if the member has a next member
       * @return true if the member has a next member, false otherwise
       */
-     bool hasNext();
+     bool hasNext() const;
    };
 
    /// Ships contained in the squadron
@@ -156,13 +156,13 @@ public:
    * Adds a ship to the squadron
    * @param ship the ship to add
    */
-   void addShipToSelf(Ship* ship);
+   void addShipToSelf(const Ship* ship);
    /**
    * Adds a ship to a copy of the squadron
    * @param ship the ship to add
    * @return the copy of the squadron with the ship added
    */
-   Squadron addShip(Ship* ship) const;
+   Squadron addShip(const Ship* ship) const;
    /**
    * Removes a ship from the squadron
    * @param ship the ship to remove
@@ -178,7 +178,7 @@ public:
    * Adds a ship to the squadron
    * @param ship the ship to add
    */
-   Squadron& operator+=(Ship& ship);
+   Squadron& operator+=(const Ship& ship);
    /**
    * Removes a ship from the squadron
    * @param ship the ship to remove

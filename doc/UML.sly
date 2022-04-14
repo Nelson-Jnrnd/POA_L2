@@ -153,10 +153,10 @@
         <variable const="false" name="out" type="ostream&amp;"/>
       </method>
       <method isAbstract="false" isStatic="false" name="const_addShip" returnType="Squadron" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="ship" type="Ship*"/>
+        <variable const="false" name="ship" type="const_Ship*"/>
       </method>
       <method isAbstract="false" isStatic="false" name="addShipToSelf" returnType="void" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="ship" type="Ship*"/>
+        <variable const="false" name="ship" type="const_Ship*"/>
       </method>
       <method isAbstract="false" isStatic="false" name="const_removeShip" returnType="Squadron" view="DEFAULT" visibility="PUBLIC">
         <variable const="false" name="ship" type="const_Ship*"/>
@@ -168,13 +168,13 @@
         <variable const="false" name="squadron" type="const_Squadron&amp;"/>
       </method>
       <method isAbstract="false" isStatic="false" name="operator+=" returnType="Squadron&amp;" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="ship" type="Ship&amp;"/>
+        <variable const="false" name="ship" type="const_Ship&amp;"/>
       </method>
       <method isAbstract="false" isStatic="false" name="operator-=" returnType="Squadron&amp;" view="DEFAULT" visibility="PUBLIC">
         <variable const="false" name="ship" type="const_Ship&amp;"/>
       </method>
       <method isAbstract="false" isStatic="false" name="const_operator+" returnType="Squadron" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="ship" type="Ship&amp;"/>
+        <variable const="false" name="ship" type="const_Ship&amp;"/>
       </method>
       <method isAbstract="false" isStatic="false" name="const_operator-" returnType="Squadron" view="DEFAULT" visibility="PUBLIC">
         <variable const="false" name="ship" type="const_Ship&amp;"/>
@@ -202,17 +202,17 @@
       <method isAbstract="false" isStatic="false" name="copySquad" returnType="void" view="DEFAULT" visibility="PRIVATE"/>
     </entity>
     <entity entityType="CLASS" id="23302" isAbstract="false" name="Member" visibility="PUBLIC">
-      <attribute const="false" defaultValue="" isStatic="false" name="ship" type="Ship*" visibility="PRIVATE"/>
+      <attribute const="false" defaultValue="" isStatic="false" name="ship" type="const_Ship*" visibility="PRIVATE"/>
       <attribute const="false" defaultValue="" isStatic="false" name="next" type="Member*" visibility="PRIVATE"/>
       <method is-constructor="true" isAbstract="false" isStatic="false" name="explicit_Member" returnType="" view="DEFAULT" visibility="PUBLIC">
-        <variable const="false" name="ship" type="Ship*"/>
+        <variable const="false" name="ship" type="const_Ship*"/>
       </method>
-      <method isAbstract="false" isStatic="false" name="getShip" returnType="Ship*" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="getNext" returnType="Member*" view="DEFAULT" visibility="PUBLIC">
+      <method isAbstract="false" isStatic="false" name="const_getShip" returnType="const_Ship*" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="const_getNext" returnType="Member*" view="DEFAULT" visibility="PUBLIC">
         <variable const="false" name="next" type="Member*"/>
       </method>
       <method isAbstract="false" isStatic="false" name="setNext" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="hasNext" returnType="bool" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="const_hasNext" returnType="bool" view="DEFAULT" visibility="PUBLIC"/>
     </entity>
   </diagramElements>
   <umlView grid="10" name="Main view" open="true">
@@ -414,9 +414,9 @@
     </relationView>
     <componentView color="-2079" componentID="23302" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
-        <x>70</x>
+        <x>30</x>
         <y>50</y>
-        <w>230</w>
+        <w>270</w>
         <h>160</h>
       </geometry>
     </componentView>
