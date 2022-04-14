@@ -93,7 +93,7 @@ void Squadron::addShipToSelf(Ship *ship) {
     }
 }
 
-Squadron Squadron::addShip(Ship *ship) {
+Squadron Squadron::addShip(Ship *ship) const{
     Squadron newSquadron(*this);
     newSquadron.addShipToSelf(ship);
     return newSquadron;
@@ -127,7 +127,7 @@ void Squadron::removeShipToSelf(const Ship *ship) {
     throw std::invalid_argument("Ship is not in the squadron");
 }
 
-Squadron Squadron::removeShip(const Ship *ship) {
+Squadron Squadron::removeShip(const Ship *ship) const{
     Squadron newSquadron(*this);
     newSquadron.removeShipToSelf(ship);
     return newSquadron;
@@ -238,15 +238,15 @@ std::ostream& operator<<(std::ostream& out, const Squadron& squadron) {
     return squadron.toStream(out);
 }
 
-Squadron Squadron::operator+(Ship &ship) {
+Squadron Squadron::operator+(Ship &ship) const{
    return addShip(&ship);
 }
 
-Squadron Squadron::operator-(const Ship &ship) {
+Squadron Squadron::operator-(const Ship &ship) const{
    return removeShip(&ship);
 }
 
-const Ship &Squadron::operator[](const int index) {
+const Ship &Squadron::operator[](const int index) const{
     return *getMember(index)->getShip();
 }
 
@@ -285,7 +285,7 @@ void Squadron::setName(std::string name) {
    this->name = std::move(name);
 }
 
-std::string Squadron::getName() {
+std::string Squadron::getName() const{
    return this->name;
 }
 

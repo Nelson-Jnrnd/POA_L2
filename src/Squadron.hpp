@@ -145,7 +145,7 @@ public:
     * Get name of squadron
     * @return string squadron's name
     */
-   std::string getName();
+   std::string getName() const;
    /**
    * Writes the details of the squadron into the output stream.
    * @param out output stream
@@ -162,7 +162,7 @@ public:
    * @param ship the ship to add
    * @return the copy of the squadron with the ship added
    */
-   Squadron addShip(Ship* ship);
+   Squadron addShip(Ship* ship) const;
    /**
    * Removes a ship from the squadron
    * @param ship the ship to remove
@@ -173,7 +173,7 @@ public:
    * @param ship the ship to remove
    * @return the copy of the squadron with the ship removed
    */
-   Squadron removeShip(const Ship* ship);
+   Squadron removeShip(const Ship* ship) const;
    /**
    * Adds a ship to the squadron
    * @param ship the ship to add
@@ -190,20 +190,20 @@ public:
    * @param ship the ship to add
    * @return the copy of the squadron with the ship added
    */
-   Squadron operator+(Ship& ship);
+   Squadron operator+(Ship& ship) const;
    /**
    * Removes a ship from a copy of the squadron
    * @param ship the ship to remove
    * @return the copy of the squadron with the ship removed
    */
-   Squadron operator-(const Ship& ship);
+   Squadron operator-(const Ship& ship) const;
    /**
    * Get the member of the squadron at the given index
    *
    * @param index the index of the member to get
    * @return Member* the member of the squadron at the given index
    */
-   const Ship& operator[](int index);
+   const Ship& operator[](int index) const;
 
    /**
    * Get the size of the squadron
