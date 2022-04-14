@@ -31,3 +31,7 @@ std::string Shuttle::getModel() const {
 unsigned int Shuttle::getModelSpeedMax() const {
     return 54;
 }
+
+Shuttle::~Shuttle() {
+
+}

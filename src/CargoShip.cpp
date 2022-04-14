@@ -17,3 +17,7 @@ std::ostream& CargoShip::toStream(std::ostream &out) const {
     << getMaxCapacity() << ")\n";
     return out;
 }
+
+CargoShip::~CargoShip() {
+
+}

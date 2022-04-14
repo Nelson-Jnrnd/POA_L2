@@ -21,6 +21,7 @@ class Shuttle : public CargoShip {
     unsigned int getNextSerialNumber() override;
     public:
         explicit Shuttle(double currentCapacity);
+        ~Shuttle();
         /** Get max capacity of the ship in tons
         * @return max capacity of the ship in tons
         */

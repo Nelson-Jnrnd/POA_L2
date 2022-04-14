@@ -26,6 +26,7 @@ class CargoShip : public Ship {
      */
     CargoShip(unsigned int serialNumber, double currentCapacity);
     public:
+    ~CargoShip();
     /** 
      * Get max capacity of the ship in tons
      * @return max capacity of the ship in tons

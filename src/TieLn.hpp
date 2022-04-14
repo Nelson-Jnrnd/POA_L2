@@ -28,6 +28,7 @@ class TieLn : public Ship {
          * Construct a new TieLn object
          */
         TieLn();
+        ~TieLn();
         std::string getModel() const override;
         unsigned int getModelSpeedMax() const override;
         double getModelWeight() const override;

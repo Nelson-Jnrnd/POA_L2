@@ -25,6 +25,7 @@ public:
      */
     Destroyer(double currentCapacity);
 
+    ~Destroyer();
     /**
      * Get max capacity of the ship in tons
      * @return max capacity of the ship in tons

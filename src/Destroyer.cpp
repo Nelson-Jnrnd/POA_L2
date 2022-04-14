@@ -32,3 +32,7 @@ std::string Destroyer::getModel() const {
 unsigned int Destroyer::getModelSpeedMax() const {
     return 40;
 }
+
+Destroyer::~Destroyer() {
+
+}

@@ -27,7 +27,7 @@ public:
      * @brief Construct a new TieIn object
      */
     TieIn();
-
+    ~TieIn();
     std::string getModel() const override;
     unsigned int getModelSpeedMax() const override;
     double getModelWeight() const override;

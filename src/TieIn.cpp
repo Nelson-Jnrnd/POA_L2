@@ -23,3 +23,7 @@ std::string TieIn::getModel() const {
 }
 
 TieIn::TieIn() : Ship(getNextSerialNumber()) {}
+
+TieIn::~TieIn() {
+
+}
